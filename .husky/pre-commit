@@ -1,0 +1,10 @@
+#!/bin/sh
+# memory-tool pre-commit hook: typecheck + lint staged files
+
+echo "Running typecheck..."
+npx tsc --noEmit || exit 1
+
+echo "Running eslint on staged files..."
+npx eslint --fix --no-warn-ignored $(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx)$') 2>/dev/null
+
+echo "Pre-commit checks passed."

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "lastFullIndex": "2026-05-16T12:37:42.070Z",
+  "entryCount": 4,
+  "entries": {
+    "system/auth-system": {
+      "id": "system/auth-system",
+      "type": "system",
+      "contentHash": "9c000a19618eecb620fb8060303d91001eb4ed1d95799c7f82a8b1090c7f9336",
+      "frontmatterHash": "7958f6c99c68d8ca6feae124a8ead331ec52b9001037230d76a982bba854a42a",
+      "tags": [
+        "auth",
+        "security",
+        "core"
+      ],
+      "lastModified": "2026-05-16T12:37:42.071Z",
+      "filePath": "systems\\auth-system.md"
+    },
+    "flow/login-flow": {
+      "id": "flow/login-flow",
+      "type": "flow",
+      "contentHash": "42e36907bf17b3c248a2bbd4fbdaa229fd7bb0bf59accfbb6d562b036fbda142",
+      "frontmatterHash": "a61452af7a4cced5a28247a536d28d69f8523f1fda744ae368000d1fe8d8fdd1",
+      "tags": [
+        "auth",
+        "login",
+        "jwt"
+      ],
+      "lastModified": "2026-05-16T12:37:42.072Z",
+      "filePath": "flows\\login-flow.md"
+    },
+    "component/token-service": {
+      "id": "component/token-service",
+      "type": "component",
+      "contentHash": "5bceaf2f8687be291ab54e45ef5c739c5e26e534115c54456cb6b30c5f42f5f9",
+      "frontmatterHash": "cbf12590001db55eb3651c463b13c84f9427e2024b82947009b5b8cdfcffa72d",
+      "tags": [
+        "jwt",
+        "token",
+        "auth"
+      ],
+      "lastModified": "2026-05-16T12:37:42.072Z",
+      "filePath": "components\\token-service.md"
+    },
+    "config/jwt-secret": {
+      "id": "config/jwt-secret",
+      "type": "config",
+      "contentHash": "e7187ababe8593c4123ea6f8643a65c22751215d198e1993bc78fdf7d6785951",
+      "frontmatterHash": "563ccdd377fcd64e88ac55d02b1ac8cb31ecdccba6fe200131146ef378a2749f",
+      "tags": [
+        "jwt",
+        "security",
+        "secret"
+      ],
+      "lastModified": "2026-05-16T12:37:42.072Z",
+      "filePath": "configs\\jwt-secret.md"
+    }
+  }
+}

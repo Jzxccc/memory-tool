@@ -1,0 +1,46 @@
+{
+  "relationships": [
+    {
+      "from": "system/auth-system",
+      "to": "flow/login-flow",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/auth-system",
+      "to": "component/token-service",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/auth-system",
+      "to": "config/jwt-secret",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/auth-system",
+      "to": "api/auth-login",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/token-service",
+      "to": "flow/login-flow",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/token-service",
+      "to": "api/auth-login",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/token-service",
+      "to": "config/jwt-secret",
+      "type": "depends_on",
+      "confidence": 1
+    }
+  ]
+}

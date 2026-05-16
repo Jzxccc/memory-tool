@@ -17,18 +17,19 @@
     "lint": "eslint src/"
   },
   "dependencies": {
-    "@libsql/client": "^0.14.0",
-    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@libsql/client": "^0.17.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "commander": "^14.0.0",
     "gray-matter": "^4.0.3",
-    "tree-sitter": "^0.22.0",
-    "tree-sitter-javascript": "^0.23.0",
+    "chalk": "^5.0.0"
+  },
+  "optionalDependencies": {
+    "tree-sitter": "^0.25.0",
+    "tree-sitter-javascript": "^0.25.0",
     "tree-sitter-typescript": "^0.23.0",
-    "tree-sitter-python": "^0.23.0",
+    "tree-sitter-python": "^0.25.0",
     "tree-sitter-java": "^0.23.0",
-    "tree-sitter-go": "^0.23.0",
-    "chalk": "^5.0.0",
-    "glob": "^11.0.0"
+    "tree-sitter-go": "^0.25.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -41,6 +42,8 @@
   "files": [
     "dist/",
     ".claude/skills/memory/",
+    ".codebuddy/skills/memory/",
+    ".lingma/skills/memory/",
     ".mcp.json"
   ],
   "keywords": ["memory", "knowledge-base", "ai-programming", "mcp", "cli"],

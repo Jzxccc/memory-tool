@@ -1,0 +1,1147 @@
+{
+  "generatedAt": "2026-05-16T15:45:56.635Z",
+  "mode": "monolith",
+  "sourceCount": 33,
+  "symbolCount": 123,
+  "files": [
+    {
+      "relativePath": "cli\\analyze.ts",
+      "language": "typescript",
+      "symbolCount": 5
+    },
+    {
+      "relativePath": "cli\\audit.ts",
+      "language": "typescript",
+      "symbolCount": 3
+    },
+    {
+      "relativePath": "cli\\graph.ts",
+      "language": "typescript",
+      "symbolCount": 5
+    },
+    {
+      "relativePath": "cli\\index.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "cli\\lazy-action.ts",
+      "language": "typescript",
+      "symbolCount": 1
+    },
+    {
+      "relativePath": "cli\\mcp.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "cli\\read.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "cli\\rebuild.ts",
+      "language": "typescript",
+      "symbolCount": 10
+    },
+    {
+      "relativePath": "cli\\search.ts",
+      "language": "typescript",
+      "symbolCount": 4
+    },
+    {
+      "relativePath": "cli\\status.ts",
+      "language": "typescript",
+      "symbolCount": 3
+    },
+    {
+      "relativePath": "core\\backend.ts",
+      "language": "typescript",
+      "symbolCount": 5
+    },
+    {
+      "relativePath": "core\\graph\\graph-io.ts",
+      "language": "typescript",
+      "symbolCount": 4
+    },
+    {
+      "relativePath": "core\\graph\\graph.test.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "core\\graph\\graph.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "core\\ingestion\\dump-writer.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "core\\ingestion\\extractor.ts",
+      "language": "typescript",
+      "symbolCount": 10
+    },
+    {
+      "relativePath": "core\\ingestion\\scanner.ts",
+      "language": "typescript",
+      "symbolCount": 6
+    },
+    {
+      "relativePath": "core\\search\\file-engine.ts",
+      "language": "typescript",
+      "symbolCount": 11
+    },
+    {
+      "relativePath": "core\\search\\libsql-engine.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "core\\search\\orchestrator.ts",
+      "language": "typescript",
+      "symbolCount": 5
+    },
+    {
+      "relativePath": "core\\search\\query-parser.test.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "core\\search\\query-parser.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "core\\search\\rrf.ts",
+      "language": "typescript",
+      "symbolCount": 3
+    },
+    {
+      "relativePath": "core\\search\\scorer.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "mcp\\resources.ts",
+      "language": "typescript",
+      "symbolCount": 1
+    },
+    {
+      "relativePath": "mcp\\server.ts",
+      "language": "typescript",
+      "symbolCount": 6
+    },
+    {
+      "relativePath": "mcp\\tools.ts",
+      "language": "typescript",
+      "symbolCount": 1
+    },
+    {
+      "relativePath": "storage\\index-handler.test.ts",
+      "language": "typescript",
+      "symbolCount": 2
+    },
+    {
+      "relativePath": "storage\\index-handler.ts",
+      "language": "typescript",
+      "symbolCount": 8
+    },
+    {
+      "relativePath": "storage\\repo-manager.ts",
+      "language": "typescript",
+      "symbolCount": 10
+    },
+    {
+      "relativePath": "types\\node-types.ts",
+      "language": "typescript",
+      "symbolCount": 0
+    },
+    {
+      "relativePath": "types\\relation-types.ts",
+      "language": "typescript",
+      "symbolCount": 0
+    },
+    {
+      "relativePath": "types\\search-types.ts",
+      "language": "typescript",
+      "symbolCount": 0
+    }
+  ],
+  "symbols": [
+    {
+      "name": "getMemoryDir",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\analyze.ts",
+      "line": 5,
+      "source": "getMemoryDir",
+      "language": "typescript"
+    },
+    {
+      "name": "scanDirectory",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\analyze.ts",
+      "line": 6,
+      "source": "scanDirectory",
+      "language": "typescript"
+    },
+    {
+      "name": "extractSymbols",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\analyze.ts",
+      "line": 7,
+      "source": "extractSymbols",
+      "language": "typescript"
+    },
+    {
+      "name": "writeDump",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\analyze.ts",
+      "line": 8,
+      "source": "writeDump",
+      "language": "typescript"
+    },
+    {
+      "name": "analyzeCommand",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\analyze.ts",
+      "line": 10,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "getMemoryDir",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\audit.ts",
+      "line": 5,
+      "source": "getMemoryDir",
+      "language": "typescript"
+    },
+    {
+      "name": "readIndex",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\audit.ts",
+      "line": 6,
+      "source": "readIndex",
+      "language": "typescript"
+    },
+    {
+      "name": "auditCommand",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\audit.ts",
+      "line": 8,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "MemoryGraph",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\graph.ts",
+      "line": 4,
+      "source": "MemoryGraph",
+      "language": "typescript"
+    },
+    {
+      "name": "readGraph",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\graph.ts",
+      "line": 5,
+      "source": "readGraph",
+      "language": "typescript"
+    },
+    {
+      "name": "getMemoryDir",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\graph.ts",
+      "line": 6,
+      "source": "getMemoryDir",
+      "language": "typescript"
+    },
+    {
+      "name": "graphCommand",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\graph.ts",
+      "line": 8,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "direction",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\graph.ts",
+      "line": 23,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "Command",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\index.ts",
+      "line": 2,
+      "source": "Command",
+      "language": "typescript"
+    },
+    {
+      "name": "createLazyAction",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\index.ts",
+      "line": 3,
+      "source": "createLazyAction",
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\lazy-action.ts",
+      "line": 4,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "mcpCommand",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\mcp.ts",
+      "line": 3,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "to",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\mcp.ts",
+      "line": 4,
+      "source": "to",
+      "language": "typescript"
+    },
+    {
+      "name": "getMemoryDir",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\read.ts",
+      "line": 5,
+      "source": "getMemoryDir",
+      "language": "typescript"
+    },
+    {
+      "name": "readCommand",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\read.ts",
+      "line": 7,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "getMemoryDir",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 5,
+      "source": "getMemoryDir",
+      "language": "typescript"
+    },
+    {
+      "name": "MemoryGraph",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 12,
+      "source": "MemoryGraph",
+      "language": "typescript"
+    },
+    {
+      "name": "writeGraph",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 13,
+      "source": "writeGraph",
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 14,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 15,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "extractFrontmatter",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 17,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "parseYamlLike",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 23,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "rebuildCommand",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 39,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "id",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 67,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 68,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "SearchOrchestrator",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
+      "line": 4,
+      "source": "SearchOrchestrator",
+      "language": "typescript"
+    },
+    {
+      "name": "FileEngine",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
+      "line": 5,
+      "source": "FileEngine",
+      "language": "typescript"
+    },
+    {
+      "name": "getMemoryDir",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
+      "line": 6,
+      "source": "getMemoryDir",
+      "language": "typescript"
+    },
+    {
+      "name": "searchCommand",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
+      "line": 8,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "getMemoryDir",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\status.ts",
+      "line": 4,
+      "source": "getMemoryDir",
+      "language": "typescript"
+    },
+    {
+      "name": "readIndex",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\status.ts",
+      "line": 5,
+      "source": "readIndex",
+      "language": "typescript"
+    },
+    {
+      "name": "statusCommand",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\status.ts",
+      "line": 7,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "getMemoryDir",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 5,
+      "source": "getMemoryDir",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchOrchestrator",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 6,
+      "source": "SearchOrchestrator",
+      "language": "typescript"
+    },
+    {
+      "name": "FileEngine",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 7,
+      "source": "FileEngine",
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 8,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "LocalBackend",
+      "type": "class",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 16,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\graph\\graph-io.ts",
+      "line": 5,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "MemoryGraph",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\graph\\graph-io.ts",
+      "line": 6,
+      "source": "MemoryGraph",
+      "language": "typescript"
+    },
+    {
+      "name": "readGraph",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\graph\\graph-io.ts",
+      "line": 8,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "writeGraph",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\graph\\graph-io.ts",
+      "line": 23,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "describe",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\graph\\graph.test.ts",
+      "line": 1,
+      "source": "describe",
+      "language": "typescript"
+    },
+    {
+      "name": "MemoryGraph",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\graph\\graph.test.ts",
+      "line": 2,
+      "source": "MemoryGraph",
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\graph\\graph.ts",
+      "line": 4,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "MemoryGraph",
+      "type": "class",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\graph\\graph.ts",
+      "line": 12,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\dump-writer.ts",
+      "line": 5,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "writeDump",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\dump-writer.ts",
+      "line": 20,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "tryLoadTreeSitter",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 19,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "extractWithRegex",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 30,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "name",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 40,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "Name",
+      "type": "class",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 58,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "X",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 67,
+      "source": "X",
+      "language": "typescript"
+    },
+    {
+      "name": "X",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 86,
+      "language": "typescript"
+    },
+    {
+      "name": "GET /path",
+      "type": "route",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 102,
+      "language": "typescript"
+    },
+    {
+      "name": "method",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 110,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "extractSymbols",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 123,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "isTreeSitterAvailable",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\extractor.ts",
+      "line": 134,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "DEFAULT_EXCLUDES",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\scanner.ts",
+      "line": 6,
+      "language": "typescript"
+    },
+    {
+      "name": "SOURCE_EXTENSIONS",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\scanner.ts",
+      "line": 11,
+      "language": "typescript"
+    },
+    {
+      "name": "detectLanguage",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\scanner.ts",
+      "line": 23,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "scanDirectory",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\scanner.ts",
+      "line": 37,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "walk",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\scanner.ts",
+      "line": 43,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "detectProjectMode",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\ingestion\\scanner.ts",
+      "line": 79,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 6,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 7,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "listNodeFiles",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 8,
+      "source": "listNodeFiles",
+      "language": "typescript"
+    },
+    {
+      "name": "WEIGHTS",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 11,
+      "language": "typescript"
+    },
+    {
+      "name": "extractFrontmatter",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 19,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "parseFrontmatter",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 25,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "matchTerm",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 42,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "scoreFile",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 48,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 60,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "summary",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 61,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "FileEngine",
+      "type": "class",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "line": 119,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\libsql-engine.ts",
+      "line": 4,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "LibsqlEngine",
+      "type": "class",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\libsql-engine.ts",
+      "line": 9,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
+      "line": 4,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "parseQuery",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
+      "line": 5,
+      "source": "parseQuery",
+      "language": "typescript"
+    },
+    {
+      "name": "reciprocalRankFusion",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
+      "line": 6,
+      "source": "reciprocalRankFusion",
+      "language": "typescript"
+    },
+    {
+      "name": "normalizeScores",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
+      "line": 7,
+      "source": "normalizeScores",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchOrchestrator",
+      "type": "class",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
+      "line": 9,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "describe",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\query-parser.test.ts",
+      "line": 1,
+      "source": "describe",
+      "language": "typescript"
+    },
+    {
+      "name": "parseQuery",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\query-parser.test.ts",
+      "line": 2,
+      "source": "parseQuery",
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\query-parser.ts",
+      "line": 4,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "parseQuery",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\query-parser.ts",
+      "line": 6,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\rrf.ts",
+      "line": 5,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "K",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\rrf.ts",
+      "line": 7,
+      "language": "typescript"
+    },
+    {
+      "name": "reciprocalRankFusion",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\rrf.ts",
+      "line": 13,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\scorer.ts",
+      "line": 4,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "normalizeScores",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\scorer.ts",
+      "line": 6,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "MEMORY_RESOURCES",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\mcp\\resources.ts",
+      "line": 3,
+      "language": "typescript"
+    },
+    {
+      "name": "Server",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\mcp\\server.ts",
+      "line": 3,
+      "source": "Server",
+      "language": "typescript"
+    },
+    {
+      "name": "StdioServerTransport",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\mcp\\server.ts",
+      "line": 4,
+      "source": "StdioServerTransport",
+      "language": "typescript"
+    },
+    {
+      "name": "MEMORY_TOOLS",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\mcp\\server.ts",
+      "line": 11,
+      "source": "MEMORY_TOOLS",
+      "language": "typescript"
+    },
+    {
+      "name": "LocalBackend",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\mcp\\server.ts",
+      "line": 12,
+      "source": "LocalBackend",
+      "language": "typescript"
+    },
+    {
+      "name": "startMCPServer",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\mcp\\server.ts",
+      "line": 14,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "args",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\mcp\\server.ts",
+      "line": 30,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "MEMORY_TOOLS",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\mcp\\tools.ts",
+      "line": 3,
+      "language": "typescript"
+    },
+    {
+      "name": "describe",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.test.ts",
+      "line": 1,
+      "source": "describe",
+      "language": "typescript"
+    },
+    {
+      "name": "computeSHA256",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.test.ts",
+      "line": 2,
+      "source": "computeSHA256",
+      "language": "typescript"
+    },
+    {
+      "name": "type",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.ts",
+      "line": 7,
+      "source": "type",
+      "language": "typescript"
+    },
+    {
+      "name": "SCHEMA_VERSION",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.ts",
+      "line": 26,
+      "language": "typescript"
+    },
+    {
+      "name": "computeSHA256",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.ts",
+      "line": 28,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "createIndexEntry",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.ts",
+      "line": 32,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "readIndex",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.ts",
+      "line": 51,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "writeIndex",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.ts",
+      "line": 61,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "createEmptyIndex",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.ts",
+      "line": 72,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "checkStale",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\index-handler.ts",
+      "line": 81,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "MEMORY_DIR",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 7,
+      "language": "typescript"
+    },
+    {
+      "name": "SUBDIRS",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 8,
+      "language": "typescript"
+    },
+    {
+      "name": "MEMORY_FILES",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 10,
+      "language": "typescript"
+    },
+    {
+      "name": "getMemoryDir",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 17,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "getSubdir",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 21,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "getNodeFilePath",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 25,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "parseNodeId",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 31,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "initMemoryDir",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 40,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "listNodeFiles",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 54,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "getFilePath",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
+      "line": 69,
+      "exported": true,
+      "language": "typescript"
+    }
+  ]
+}
