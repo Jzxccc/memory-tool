@@ -1,0 +1,48 @@
+{
+  "name": "memory-tool",
+  "version": "0.1.0",
+  "description": "AI-assisted programming tool knowledge base — document project-level code business logic",
+  "main": "dist/cli/index.js",
+  "bin": {
+    "memory": "dist/cli/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/cli/index.ts",
+    "start": "node dist/cli/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "commander": "^14.0.0",
+    "gray-matter": "^4.0.3",
+    "tree-sitter": "^0.22.0",
+    "tree-sitter-javascript": "^0.23.0",
+    "tree-sitter-typescript": "^0.23.0",
+    "tree-sitter-python": "^0.23.0",
+    "tree-sitter-java": "^0.23.0",
+    "tree-sitter-go": "^0.23.0",
+    "chalk": "^5.0.0",
+    "glob": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "files": [
+    "dist/",
+    ".claude/skills/memory/",
+    ".mcp.json"
+  ],
+  "keywords": ["memory", "knowledge-base", "ai-programming", "mcp", "cli"],
+  "license": "MIT"
+}
