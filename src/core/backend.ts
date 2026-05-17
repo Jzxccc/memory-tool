@@ -4,8 +4,32 @@
 import * as path from 'node:path';
 import { getMemoryDir } from '../storage/repo-manager.js';
 import { SearchOrchestrator } from './search/orchestrator.js';
-import { FileEngine } from './search/file-engine.js';
+import { SearchEngineRegistry } from './search/engines/registry.js';
+import { FileEngine } from './search/engines/file.js';
+import { LibsqlEngine } from './search/engines/libsql.js';
+import { HybridSearch } from './search/engines/hybrid.js';
 import type { SearchResult } from '../types/search-types.js';
+
+/**
+ * Create the default search engine registry with FileEngine and
+ * optionally LibsqlEngine (if database exists).
+ */
+export function defaultSearchEngineRegistry(projectRoot: string): SearchEngineRegistry {
+  const registry = new SearchEngineRegistry();
+  const memoryDir = getMemoryDir(projectRoot);
+
+  // Always register FileEngine as the baseline keyword engine
+  registry.register(new FileEngine(memoryDir));
+
+  // Register HybridSearch that combines keyword (FileEngine) + semantic (future)
+  const hybrid = new HybridSearch(new FileEngine(memoryDir));
+  registry.register(hybrid);
+
+  // Try to register LibsqlEngine (will be unhealthy if DB doesn't exist)
+  registry.register(new LibsqlEngine(memoryDir));
+
+  return registry;
+}
 
 export interface BackendResult {
   success: boolean;
@@ -16,17 +40,21 @@ export interface BackendResult {
 export class LocalBackend {
   private orchestrator: SearchOrchestrator;
 
-  constructor(private projectRoot: string) {
-    this.orchestrator = new SearchOrchestrator();
-    const memoryDir = getMemoryDir(projectRoot);
-    this.orchestrator.addEngine(new FileEngine(memoryDir));
+  constructor(private projectRoot: string, registry?: SearchEngineRegistry) {
+    this.orchestrator = new SearchOrchestrator(
+      registry || defaultSearchEngineRegistry(projectRoot),
+    );
   }
 
-  async search(query: string, options?: { category?: string; tag?: string; top?: number }): Promise<SearchResult[]> {
+  async search(
+    query: string,
+    options?: { category?: string; tag?: string; top?: number; strategy?: string },
+  ): Promise<SearchResult[]> {
     return this.orchestrator.search(query, {
       category: options?.category,
       tag: options?.tag,
       top: options?.top || 10,
+      strategy: (options?.strategy as any) || 'auto',
     });
   }
 

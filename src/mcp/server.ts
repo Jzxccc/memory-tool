@@ -36,6 +36,7 @@ export async function startMCPServer(projectRoot: string) {
             category: args.category as string | undefined,
             tag: args.tag as string | undefined,
             top: (args.top as number) || 10,
+            strategy: args.strategy as string | undefined,
           });
           return {
             content: [{ type: 'text', text: JSON.stringify(results, null, 2) }]

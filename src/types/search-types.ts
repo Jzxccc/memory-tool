@@ -7,10 +7,15 @@ export interface ParsedQuery {
   operator: QueryOperator;
 }
 
+export type EngineCapability = 'keyword' | 'semantic' | 'hybrid';
+
+export type SearchStrategy = 'keyword' | 'semantic' | 'hybrid' | 'auto';
+
 export interface SearchOptions {
   category?: string; // Node type filter
   tag?: string;
   top: number;
+  strategy?: SearchStrategy; // Engine selection strategy
 }
 
 export interface SearchResult {
@@ -24,5 +29,8 @@ export interface SearchResult {
 
 export interface SearchEngine {
   name: string;
+  capabilities: EngineCapability[];
+  priority: number; // 0 = highest
   search(query: ParsedQuery, options: SearchOptions): Promise<SearchResult[]>;
+  healthCheck?(): Promise<boolean>;
 }

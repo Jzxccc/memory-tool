@@ -11,6 +11,8 @@ import {
 } from '../storage/index-handler.js';
 import { MemoryGraph } from '../core/graph/graph.js';
 import { writeGraph } from '../core/graph/graph-io.js';
+import { LibsqlEngine } from '../core/search/engines/libsql.js';
+import { defaultSearchEngineRegistry } from '../core/backend.js';
 import type { GraphRelationship } from '../types/relation-types.js';
 import type { Frontmatter, FlowFrontmatter } from '../types/node-types.js';
 
@@ -133,10 +135,41 @@ export async function rebuildCommand(options: {
   writeGraph(graphPath, graph);
   console.log(`  Graph: ${graph.getEdgeCount()} relationships written to graph.json`);
 
-  // Engine mode
+  // Engine mode — build FTS5 index for libsql engine
   if (options.engine === 'libsql') {
-    console.log(`  Engine: libsql mode not yet implemented`);
+    console.log(`  Engine: building libsql FTS5 index...`);
+    const libsqlEngine = new LibsqlEngine(memoryDir);
+
+    // Collect entry contents for FTS5 indexing
+    const entryContents: Array<{ id: string; type: string; tags: string; summary: string; body: string }> = [];
+    for (const [id, entry] of Object.entries(index.entries)) {
+      const filePath = path.join(memoryDir, entry.filePath);
+      try {
+        const content = fs.readFileSync(filePath, 'utf-8');
+        const parsed = extractFrontmatter(content);
+        if (parsed) {
+          const fm = parseYamlLike(parsed.frontmatter);
+          entryContents.push({
+            id: entry.id,
+            type: entry.type,
+            tags: (fm.tags as string[])?.join(', ') || '',
+            summary: (fm.summary as string) || '',
+            body: parsed.body,
+          });
+        }
+      } catch {
+        // Skip unreadable files
+      }
+    }
+    await libsqlEngine.buildFtsIndex(entryContents);
+    console.log(`  Engine: FTS5 index built (${entryContents.length} entries)`);
   }
+
+  // Show engine registration summary
+  const registry = defaultSearchEngineRegistry(projectRoot);
+  const allEngines = registry.getAll();
+  const engineSummary = allEngines.map(e => `${e.name}(${e.capabilities.join('/')})`).join(', ');
+  console.log(`  Engines: ${engineSummary}`);
 
   console.log(`\nDone! ${parsed} entries indexed.`);
 }

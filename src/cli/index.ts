@@ -23,6 +23,7 @@ program
   .option('-t, --tag <tag>', 'Filter by tag')
   .option('--top <n>', 'Limit results', '10')
   .option('--format <fmt>', 'Output format (json)', 'text')
+  .option('-s, --strategy <strategy>', 'Search strategy (keyword|semantic|hybrid|auto)', 'auto')
   .action(createLazyAction(() => import('./search.js'), 'searchCommand'));
 
 // memory read <id>

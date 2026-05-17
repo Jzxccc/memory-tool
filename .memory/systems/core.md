@@ -26,11 +26,13 @@ Core 系统是 memory-tool 的核心处理引擎，包含三大子系统：
 - **MemoryGraph** (`graph.ts`) — 基于邻接表的内存图，支持节点/边管理、BFS 遍历
 - **GraphIO** (`graph-io.ts`) — 图的 JSON 序列化/反序列化
 
-## Search（搜索引擎）
+## Search（搜索引擎） — `engines/` 包
 
 - **QueryParser** (`query-parser.ts`) — 解析搜索查询字符串为结构化查询
-- **FileEngine** (`file-engine.ts`) — 基于文件元数据的搜索引擎，支持加权评分
-- **LibsqlEngine** (`libsql-engine.ts`) — 基于 libSQL 的搜索引擎（可选）
+- **SearchEngineRegistry** (`engines/registry.ts`) — 引擎注册、发现、按策略/健康状态选择
+- **FileEngine** (`engines/file.ts`) — 基于文件元数据的搜索引擎，支持加权评分
+- **LibsqlEngine** (`engines/libsql.ts`) — 基于 libSQL + FTS5 的搜索引擎（可选）
+- **HybridSearch** (`engines/hybrid.ts`) — 混合检索，keyword + semantic 并行融合
 - **RRF** (`rrf.ts`) — Reciprocal Rank Fusion 多引擎结果融合算法
 - **Scorer** (`scorer.ts`) — 搜索得分归一化
 - **SearchOrchestrator** (`orchestrator.ts`) — 多搜索引擎编排，并行分发 + RRF 融合 + 得分归一化

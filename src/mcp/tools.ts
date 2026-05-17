@@ -17,7 +17,13 @@ export const MEMORY_TOOLS = [
           description: 'Filter by node type'
         },
         tag: { type: 'string', description: 'Filter by tag' },
-        top: { type: 'integer', default: 10, description: 'Max results' }
+        top: { type: 'integer', default: 10, description: 'Max results' },
+        strategy: {
+          type: 'string',
+          enum: ['keyword', 'semantic', 'hybrid', 'auto'],
+          default: 'auto',
+          description: 'Search engine strategy (keyword=FileEngine, hybrid=combine engines, auto=all)'
+        }
       },
       required: ['query']
     },

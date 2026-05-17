@@ -1,7 +1,7 @@
 ---
 id: component/index-handler
 type: component
-summary: Index file handler — reads/writes index.json with SHA256 hashing, content-addressed cache pattern for staleness detection
+summary: Index file handler — reads/writes index.json with SHA256 hashing, content-addressed cache pattern for staleness detection, and atomic writes
 tags: [index, hash, sha256, cache, staleness]
 status: stable
 created: 2026-05-17
@@ -24,40 +24,68 @@ relates: [system/storage, component/repo-manager, config/storage-constants]
 
 基于 GitNexus 的内容寻址缓存模式管理 `index.json`。
 
-## 索引结构
+## 索引数据结构
 
 ```typescript
 IndexFile {
-  schemaVersion: number;     // 模式版本 (当前=1)
-  lastFullIndex: string;     // 最后全量索引时间 (ISO-8601)
-  entryCount: number;        // 条目总数
-  entries: Record<string, IndexEntry>;  // ID → 条目映射
-}
-
-IndexEntry {
-  id: string;
-  type: NodeType;
-  contentHash: string;       // 全文 SHA256
-  frontmatterHash: string;   // frontmatter 部分的 SHA256
-  tags: string[];
-  lastModified: string;
-  filePath: string;
+  schemaVersion: 1
+  lastFullIndex: "2026-05-17T11:58:40.461Z"
+  entryCount: 17
+  entries: {
+    "system/cli": {
+      id: "system/cli"
+      type: "system"
+      contentHash: "abc123..."    // 全文 SHA256
+      frontmatterHash: "def456..." // 仅 frontmatter 的 SHA256
+      tags: ["cli", "commander"]
+      lastModified: "2026-05-17T..."
+      filePath: "systems/cli.md"
+    }
+  }
 }
 ```
 
-## 哈希策略
+## 导出的函数
 
-- `contentHash` — 对完整 .md 文件内容计算 SHA256
-- `frontmatterHash` — 仅对 `---` 包围的 frontmatter 部分计算 SHA256
-- 双重哈希允许区分 frontmatter 变更和正文变更
+| 函数 | 签名 | 作用 |
+|------|------|------|
+| `computeSHA256` | `(content: string) => string` | 计算 SHA256 哈希 |
+| `createIndexEntry` | `(id, type, fullContent, fmContent, tags, filePath) => IndexEntry` | 创建带双重哈希的索引条目 |
+| `readIndex` | `(indexPath) => IndexFile \| null` | 读取并解析 index.json |
+| `writeIndex` | `(indexPath, index) => void` | 原子写入 index.json（临时文件 + rename） |
+| `createEmptyIndex` | `() => IndexFile` | 创建空索引骨架 |
+| `checkStale` | `(index, memoryDir) => {stale, missing, fresh}` | 重新计算哈希对比索引 |
 
-## Stale 检测
+## 双重哈希策略
 
-`checkStale()` 重新计算文件哈希并与索引对比，返回：
-- **stale** — 文件内容已变更，索引过时
-- **missing** — 索引中有但文件已删除
-- **fresh** — 索引与文件一致
+- **contentHash** — 对完整 `.md` 文件内容（含 frontmatter + body）计算 SHA256
+- **frontmatterHash** — 仅对 `---` 包围的 frontmatter 文本计算 SHA256
+- 用途：通过对比 frontmatterHash 可判断是否仅 frontmatter 变更（如 tags、summary），避免全量重建
+
+## Stale 检测流程
+
+```
+checkStale(index, memoryDir):
+  for each entry in index.entries:
+    1. 检查文件是否存在 → 不存在则 +missing
+    2. 读取文件内容 → 重新计算 SHA256
+    3. 对比 contentHash → 不匹配则 +stale
+    4. 一致则 fresh+1
+```
 
 ## 原子写入
 
-`writeIndex()` 使用临时文件 + `renameSync` 实现原子写入，防止写入过程中断导致索引损坏。
+```typescript
+writeIndex(indexPath, index):
+  tmpPath = indexPath + '.tmp'
+  fs.writeFileSync(tmpPath, JSON.stringify(index))
+  fs.renameSync(tmpPath, indexPath)  // 原子操作
+```
+
+避免写入中断导致索引文件损坏。
+
+## 注意事项
+
+- 若 index.json 不存在或损坏，`readIndex` 返回 `null`
+- `writeIndex` 会自动创建目录
+- schemaVersion 当前固定为 `1`，未来升级索引结构时递增

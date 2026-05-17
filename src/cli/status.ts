@@ -1,8 +1,9 @@
-// memory status — health check with entry count, type breakdown, staleness
+// memory status — health check with entry count, type breakdown, staleness, engine info
 
 import * as path from 'node:path';
 import { getMemoryDir, listNodeFiles, parseNodeId } from '../storage/repo-manager.js';
 import { readIndex, checkStale } from '../storage/index-handler.js';
+import { defaultSearchEngineRegistry } from '../core/backend.js';
 
 export async function statusCommand() {
   const projectRoot = process.cwd();
@@ -30,6 +31,17 @@ export async function statusCommand() {
   console.log(`配置项:          ${typeCounts['config'] || 0}`);
   console.log(`API 接口:        ${typeCounts['api'] || 0}`);
   console.log(`技术决策:        ${typeCounts['decision'] || 0}`);
+  console.log('');
+
+  // Engine health
+  const registry = defaultSearchEngineRegistry(projectRoot);
+  const engines = registry.getAll();
+  console.log('搜索引擎:');
+  for (const engine of engines) {
+    const healthy = engine.healthCheck ? (await engine.healthCheck()) : true;
+    const status = healthy ? '✓' : '✗';
+    console.log(`  ${status} ${engine.name} (${engine.capabilities.join(', ')}, priority=${engine.priority})`);
+  }
   console.log('');
 
   // Check staleness

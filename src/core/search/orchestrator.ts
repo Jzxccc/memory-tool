@@ -1,24 +1,25 @@
-// Unified search orchestrator — dispatches to available engines,
+// Unified search orchestrator — dispatches to available engines via registry,
 // fuses results via RRF, and normalizes scores.
 
-import type { ParsedQuery, SearchOptions, SearchResult, SearchEngine } from '../../types/search-types.js';
+import type { ParsedQuery, SearchOptions, SearchResult } from '../../types/search-types.js';
 import { parseQuery } from './query-parser.js';
 import { reciprocalRankFusion } from './rrf.js';
 import { normalizeScores } from './scorer.js';
+import { SearchEngineRegistry } from './engines/registry.js';
 
 export class SearchOrchestrator {
-  private engines: SearchEngine[] = [];
+  private registry: SearchEngineRegistry;
 
-  addEngine(engine: SearchEngine): void {
-    this.engines.push(engine);
+  constructor(registry?: SearchEngineRegistry) {
+    this.registry = registry || new SearchEngineRegistry();
   }
 
-  removeEngine(name: string): void {
-    this.engines = this.engines.filter(e => e.name !== name);
+  getRegistry(): SearchEngineRegistry {
+    return this.registry;
   }
 
   getEngines(): string[] {
-    return this.engines.map(e => e.name);
+    return this.registry.getAll().map(e => e.name);
   }
 
   async search(
@@ -27,12 +28,18 @@ export class SearchOrchestrator {
   ): Promise<SearchResult[]> {
     const query: ParsedQuery = parseQuery(rawQuery);
 
+    // Select engines based on strategy and health
+    const engines = await this.registry.selectForQuery(
+      query,
+      options.strategy || 'auto',
+    );
+
     // If no engines, return empty
-    if (this.engines.length === 0) return [];
+    if (engines.length === 0) return [];
 
     // Dispatch to all engines in parallel
     const engineResults = await Promise.all(
-      this.engines.map(engine => engine.search(query, options)),
+      engines.map(engine => engine.search(query, options)),
     );
 
     // Fuse via RRF

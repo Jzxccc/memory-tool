@@ -151,6 +151,30 @@
       "confidence": 1
     },
     {
+      "from": "component/dump-writer",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/dump-writer",
+      "to": "component/scanner",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/dump-writer",
+      "to": "component/extractor",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/dump-writer",
+      "to": "flow/code-analysis",
+      "type": "references",
+      "confidence": 1
+    },
+    {
       "from": "component/extractor",
       "to": "system/core",
       "type": "references",
@@ -176,13 +200,37 @@
     },
     {
       "from": "component/file-engine",
-      "to": "component/query-parser",
+      "to": "component/search-registry",
       "type": "references",
       "confidence": 1
     },
     {
-      "from": "component/file-engine",
-      "to": "flow/knowledge-search",
+      "from": "component/graph-io",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/graph-io",
+      "to": "system/storage",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/hybrid-search",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/hybrid-search",
+      "to": "component/search-orchestrator",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/hybrid-search",
+      "to": "component/search-registry",
       "type": "references",
       "confidence": 1
     },
@@ -205,6 +253,30 @@
       "confidence": 1
     },
     {
+      "from": "component/lazy-action",
+      "to": "system/cli",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/libsql-engine",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/libsql-engine",
+      "to": "component/search-orchestrator",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/libsql-engine",
+      "to": "component/search-registry",
+      "type": "references",
+      "confidence": 1
+    },
+    {
       "from": "component/local-backend",
       "to": "system/cli",
       "type": "references",
@@ -223,8 +295,32 @@
       "confidence": 1
     },
     {
+      "from": "component/mcp-resources",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/mcp-resources",
+      "to": "component/mcp-server",
+      "type": "references",
+      "confidence": 1
+    },
+    {
       "from": "component/mcp-server",
       "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/mcp-tools",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/mcp-tools",
+      "to": "component/mcp-server",
       "type": "references",
       "confidence": 1
     },
@@ -237,6 +333,30 @@
     {
       "from": "component/memory-graph",
       "to": "component/graph-io",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/query-parser",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/query-parser",
+      "to": "component/search-orchestrator",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/query-parser",
+      "to": "component/file-engine",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/query-parser",
+      "to": "flow/knowledge-search",
       "type": "references",
       "confidence": 1
     },
@@ -259,6 +379,24 @@
       "confidence": 1
     },
     {
+      "from": "component/rrf",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/rrf",
+      "to": "component/search-orchestrator",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/rrf",
+      "to": "flow/knowledge-search",
+      "type": "references",
+      "confidence": 1
+    },
+    {
       "from": "component/scanner",
       "to": "system/core",
       "type": "references",
@@ -273,6 +411,30 @@
     {
       "from": "component/scanner",
       "to": "flow/code-analysis",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/scorer",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/scorer",
+      "to": "component/search-orchestrator",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/scorer",
+      "to": "component/rrf",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/scorer",
+      "to": "flow/knowledge-search",
       "type": "references",
       "confidence": 1
     },
@@ -296,7 +458,25 @@
     },
     {
       "from": "component/search-orchestrator",
+      "to": "component/hybrid-search",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/search-orchestrator",
       "to": "flow/knowledge-search",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/search-registry",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/search-registry",
+      "to": "component/search-orchestrator",
       "type": "references",
       "confidence": 1
     },
@@ -309,6 +489,90 @@
     {
       "from": "config/storage-constants",
       "to": "component/repo-manager",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-categories",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-categories",
+      "to": "component/mcp-server",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-categories",
+      "to": "api/memory-status",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-read",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-read",
+      "to": "component/mcp-server",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-read",
+      "to": "api/memory-search",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-search",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-search",
+      "to": "component/mcp-server",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-search",
+      "to": "component/search-orchestrator",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-search",
+      "to": "api/memory-read",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-search",
+      "to": "api/memory-status",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-status",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-status",
+      "to": "component/mcp-server",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "api/memory-status",
+      "to": "component/index-handler",
       "type": "references",
       "confidence": 1
     }

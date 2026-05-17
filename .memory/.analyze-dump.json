@@ -1,173 +1,198 @@
 {
-  "generatedAt": "2026-05-17T00:02:28.336Z",
+  "generatedAt": "2026-05-17T14:50:32.388Z",
   "mode": "monolith",
-  "sourceCount": 33,
-  "symbolCount": 191,
+  "sourceCount": 38,
+  "symbolCount": 250,
   "files": [
     {
-      "relativePath": "cli\\analyze.ts",
+      "relativePath": "src\\cli\\analyze.ts",
       "language": "typescript",
       "symbolCount": 11
     },
     {
-      "relativePath": "cli\\audit.ts",
+      "relativePath": "src\\cli\\audit.ts",
       "language": "typescript",
       "symbolCount": 5
     },
     {
-      "relativePath": "cli\\graph.ts",
+      "relativePath": "src\\cli\\graph.ts",
       "language": "typescript",
       "symbolCount": 4
     },
     {
-      "relativePath": "cli\\index.ts",
+      "relativePath": "src\\cli\\index.ts",
       "language": "typescript",
       "symbolCount": 2
     },
     {
-      "relativePath": "cli\\lazy-action.ts",
+      "relativePath": "src\\cli\\lazy-action.ts",
       "language": "typescript",
       "symbolCount": 2
     },
     {
-      "relativePath": "cli\\mcp.ts",
+      "relativePath": "src\\cli\\mcp.ts",
       "language": "typescript",
       "symbolCount": 1
     },
     {
-      "relativePath": "cli\\read.ts",
-      "language": "typescript",
-      "symbolCount": 3
-    },
-    {
-      "relativePath": "cli\\rebuild.ts",
-      "language": "typescript",
-      "symbolCount": 15
-    },
-    {
-      "relativePath": "cli\\search.ts",
+      "relativePath": "src\\cli\\read.ts",
       "language": "typescript",
       "symbolCount": 5
     },
     {
-      "relativePath": "cli\\status.ts",
+      "relativePath": "src\\cli\\rebuild.ts",
       "language": "typescript",
-      "symbolCount": 6
+      "symbolCount": 17
     },
     {
-      "relativePath": "core\\backend.ts",
+      "relativePath": "src\\cli\\search.ts",
       "language": "typescript",
-      "symbolCount": 9
+      "symbolCount": 5
     },
     {
-      "relativePath": "core\\graph\\graph-io.ts",
+      "relativePath": "src\\cli\\status.ts",
       "language": "typescript",
-      "symbolCount": 4
+      "symbolCount": 7
     },
     {
-      "relativePath": "core\\graph\\graph.test.ts",
-      "language": "typescript",
-      "symbolCount": 4
-    },
-    {
-      "relativePath": "core\\graph\\graph.ts",
+      "relativePath": "src\\core\\backend.ts",
       "language": "typescript",
       "symbolCount": 13
     },
     {
-      "relativePath": "core\\ingestion\\dump-writer.ts",
+      "relativePath": "src\\core\\graph\\graph-io.ts",
+      "language": "typescript",
+      "symbolCount": 4
+    },
+    {
+      "relativePath": "src\\core\\graph\\graph.test.ts",
+      "language": "typescript",
+      "symbolCount": 4
+    },
+    {
+      "relativePath": "src\\core\\graph\\graph.ts",
+      "language": "typescript",
+      "symbolCount": 13
+    },
+    {
+      "relativePath": "src\\core\\ingestion\\dump-writer.ts",
       "language": "typescript",
       "symbolCount": 2
     },
     {
-      "relativePath": "core\\ingestion\\extractor.ts",
+      "relativePath": "src\\core\\ingestion\\extractor.ts",
       "language": "typescript",
       "symbolCount": 16
     },
     {
-      "relativePath": "core\\ingestion\\scanner.ts",
+      "relativePath": "src\\core\\ingestion\\scanner.ts",
       "language": "typescript",
       "symbolCount": 6
     },
     {
-      "relativePath": "core\\search\\file-engine.ts",
+      "relativePath": "src\\core\\search\\engines\\file.ts",
       "language": "typescript",
-      "symbolCount": 15
+      "symbolCount": 16
     },
     {
-      "relativePath": "core\\search\\libsql-engine.ts",
+      "relativePath": "src\\core\\search\\engines\\hybrid.ts",
       "language": "typescript",
-      "symbolCount": 6
+      "symbolCount": 11
     },
     {
-      "relativePath": "core\\search\\orchestrator.ts",
+      "relativePath": "src\\core\\search\\engines\\libsql.ts",
+      "language": "typescript",
+      "symbolCount": 12
+    },
+    {
+      "relativePath": "src\\core\\search\\engines\\registry.ts",
+      "language": "typescript",
+      "symbolCount": 12
+    },
+    {
+      "relativePath": "src\\core\\search\\orchestrator.ts",
       "language": "typescript",
       "symbolCount": 13
     },
     {
-      "relativePath": "core\\search\\query-parser.test.ts",
+      "relativePath": "src\\core\\search\\query-parser.test.ts",
       "language": "typescript",
       "symbolCount": 4
     },
     {
-      "relativePath": "core\\search\\query-parser.ts",
+      "relativePath": "src\\core\\search\\query-parser.ts",
       "language": "typescript",
       "symbolCount": 3
     },
     {
-      "relativePath": "core\\search\\rrf.ts",
+      "relativePath": "src\\core\\search\\rrf.ts",
       "language": "typescript",
       "symbolCount": 3
     },
     {
-      "relativePath": "core\\search\\scorer.ts",
+      "relativePath": "src\\core\\search\\scorer.ts",
       "language": "typescript",
       "symbolCount": 2
     },
     {
-      "relativePath": "mcp\\resources.ts",
+      "relativePath": "src\\mcp\\resources.ts",
       "language": "typescript",
       "symbolCount": 1
     },
     {
-      "relativePath": "mcp\\server.ts",
+      "relativePath": "src\\mcp\\server.ts",
       "language": "typescript",
       "symbolCount": 9
     },
     {
-      "relativePath": "mcp\\tools.ts",
+      "relativePath": "src\\mcp\\tools.ts",
       "language": "typescript",
       "symbolCount": 1
     },
     {
-      "relativePath": "storage\\index-handler.test.ts",
+      "relativePath": "src\\storage\\index-handler.test.ts",
       "language": "typescript",
       "symbolCount": 8
     },
     {
-      "relativePath": "storage\\index-handler.ts",
+      "relativePath": "src\\storage\\index-handler.ts",
       "language": "typescript",
       "symbolCount": 8
     },
     {
-      "relativePath": "storage\\repo-manager.ts",
+      "relativePath": "src\\storage\\repo-manager.ts",
       "language": "typescript",
       "symbolCount": 10
     },
     {
-      "relativePath": "types\\node-types.ts",
+      "relativePath": "src\\types\\node-types.ts",
       "language": "typescript",
       "symbolCount": 0
     },
     {
-      "relativePath": "types\\relation-types.ts",
+      "relativePath": "src\\types\\relation-types.ts",
       "language": "typescript",
       "symbolCount": 0
     },
     {
-      "relativePath": "types\\search-types.ts",
+      "relativePath": "src\\types\\search-types.ts",
       "language": "typescript",
       "symbolCount": 0
+    },
+    {
+      "relativePath": "tests\\hybrid-engine.test.ts",
+      "language": "typescript",
+      "symbolCount": 10
+    },
+    {
+      "relativePath": "tests\\registry.test.ts",
+      "language": "typescript",
+      "symbolCount": 9
+    },
+    {
+      "relativePath": "vitest.config.ts",
+      "language": "typescript",
+      "symbolCount": 1
     }
   ],
   "symbols": [
@@ -375,7 +400,7 @@
       "name": "getMemoryDir",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\read.ts",
-      "line": 5,
+      "line": 6,
       "source": "../storage/repo-manager.js",
       "language": "typescript"
     },
@@ -383,15 +408,31 @@
       "name": "getNodeFilePath",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\read.ts",
-      "line": 5,
+      "line": 6,
       "source": "../storage/repo-manager.js",
+      "language": "typescript"
+    },
+    {
+      "name": "stripFrontmatter",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\read.ts",
+      "line": 8,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "extractSummary",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\read.ts",
+      "line": 13,
+      "exported": false,
       "language": "typescript"
     },
     {
       "name": "readCommand",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\read.ts",
-      "line": 7,
+      "line": 25,
       "exported": true,
       "language": "typescript"
     },
@@ -468,10 +509,26 @@
       "language": "typescript"
     },
     {
-      "name": "GraphRelationship",
+      "name": "LibsqlEngine",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
       "line": 14,
+      "source": "../core/search/engines/libsql.js",
+      "language": "typescript"
+    },
+    {
+      "name": "defaultSearchEngineRegistry",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 15,
+      "source": "../core/backend.js",
+      "language": "typescript"
+    },
+    {
+      "name": "GraphRelationship",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
+      "line": 16,
       "source": "../types/relation-types.js",
       "language": "typescript"
     },
@@ -479,7 +536,7 @@
       "name": "Frontmatter",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
-      "line": 15,
+      "line": 17,
       "source": "../types/node-types.js",
       "language": "typescript"
     },
@@ -487,7 +544,7 @@
       "name": "FlowFrontmatter",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
-      "line": 15,
+      "line": 17,
       "source": "../types/node-types.js",
       "language": "typescript"
     },
@@ -495,7 +552,7 @@
       "name": "extractFrontmatter",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
-      "line": 17,
+      "line": 19,
       "exported": false,
       "language": "typescript"
     },
@@ -503,7 +560,7 @@
       "name": "parseYamlLike",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
-      "line": 23,
+      "line": 25,
       "exported": false,
       "language": "typescript"
     },
@@ -511,7 +568,7 @@
       "name": "rebuildCommand",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\rebuild.ts",
-      "line": 39,
+      "line": 41,
       "exported": true,
       "language": "typescript"
     },
@@ -519,23 +576,23 @@
       "name": "SearchOrchestrator",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
-      "line": 4,
+      "line": 3,
       "source": "../core/search/orchestrator.js",
       "language": "typescript"
     },
     {
-      "name": "FileEngine",
+      "name": "defaultSearchEngineRegistry",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
-      "line": 5,
-      "source": "../core/search/file-engine.js",
+      "line": 4,
+      "source": "../core/backend.js",
       "language": "typescript"
     },
     {
       "name": "getMemoryDir",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
-      "line": 6,
+      "line": 5,
       "source": "../storage/repo-manager.js",
       "language": "typescript"
     },
@@ -543,7 +600,7 @@
       "name": "initMemoryDir",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
-      "line": 6,
+      "line": 5,
       "source": "../storage/repo-manager.js",
       "language": "typescript"
     },
@@ -551,7 +608,7 @@
       "name": "searchCommand",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\search.ts",
-      "line": 8,
+      "line": 7,
       "exported": true,
       "language": "typescript"
     },
@@ -596,10 +653,18 @@
       "language": "typescript"
     },
     {
+      "name": "defaultSearchEngineRegistry",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\status.ts",
+      "line": 6,
+      "source": "../core/backend.js",
+      "language": "typescript"
+    },
+    {
       "name": "statusCommand",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\cli\\status.ts",
-      "line": 7,
+      "line": 8,
       "exported": true,
       "language": "typescript"
     },
@@ -620,26 +685,58 @@
       "language": "typescript"
     },
     {
-      "name": "FileEngine",
+      "name": "SearchEngineRegistry",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
       "line": 7,
-      "source": "./search/file-engine.js",
+      "source": "./search/engines/registry.js",
+      "language": "typescript"
+    },
+    {
+      "name": "FileEngine",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 8,
+      "source": "./search/engines/file.js",
+      "language": "typescript"
+    },
+    {
+      "name": "LibsqlEngine",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 9,
+      "source": "./search/engines/libsql.js",
+      "language": "typescript"
+    },
+    {
+      "name": "HybridSearch",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 10,
+      "source": "./search/engines/hybrid.js",
       "language": "typescript"
     },
     {
       "name": "SearchResult",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
-      "line": 8,
+      "line": 11,
       "source": "../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "defaultSearchEngineRegistry",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
+      "line": 17,
+      "exported": true,
       "language": "typescript"
     },
     {
       "name": "LocalBackend",
       "type": "class",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
-      "line": 16,
+      "line": 40,
       "exported": true,
       "language": "typescript"
     },
@@ -647,7 +744,7 @@
       "name": "constructor",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
-      "line": 19,
+      "line": 43,
       "exported": true,
       "language": "typescript",
       "parent": "LocalBackend"
@@ -656,7 +753,7 @@
       "name": "search",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
-      "line": 25,
+      "line": 49,
       "exported": true,
       "language": "typescript",
       "parent": "LocalBackend"
@@ -665,7 +762,7 @@
       "name": "read",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
-      "line": 33,
+      "line": 61,
       "exported": true,
       "language": "typescript",
       "parent": "LocalBackend"
@@ -674,7 +771,7 @@
       "name": "status",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\backend.ts",
-      "line": 42,
+      "line": 70,
       "exported": true,
       "language": "typescript",
       "parent": "LocalBackend"
@@ -1042,113 +1139,122 @@
       "language": "typescript"
     },
     {
+      "name": "EngineCapability",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 6,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
       "name": "ParsedQuery",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
       "line": 6,
-      "source": "../../types/search-types.js",
+      "source": "../../../types/search-types.js",
       "language": "typescript"
     },
     {
       "name": "SearchEngine",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
       "line": 6,
-      "source": "../../types/search-types.js",
+      "source": "../../../types/search-types.js",
       "language": "typescript"
     },
     {
       "name": "SearchOptions",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
       "line": 6,
-      "source": "../../types/search-types.js",
+      "source": "../../../types/search-types.js",
       "language": "typescript"
     },
     {
       "name": "SearchResult",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
       "line": 6,
-      "source": "../../types/search-types.js",
-      "language": "typescript"
-    },
-    {
-      "name": "Frontmatter",
-      "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 7,
-      "source": "../../types/node-types.js",
+      "source": "../../../types/search-types.js",
       "language": "typescript"
     },
     {
       "name": "listNodeFiles",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 8,
-      "source": "../../storage/repo-manager.js",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 7,
+      "source": "../../../storage/repo-manager.js",
       "language": "typescript"
     },
     {
       "name": "parseNodeId",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 8,
-      "source": "../../storage/repo-manager.js",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 7,
+      "source": "../../../storage/repo-manager.js",
       "language": "typescript"
     },
     {
       "name": "WEIGHTS",
       "type": "config",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 11,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 10,
       "language": "typescript"
     },
     {
       "name": "extractFrontmatter",
       "type": "function",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 19,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 17,
       "exported": false,
       "language": "typescript"
     },
     {
       "name": "parseFrontmatter",
       "type": "function",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 25,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 23,
       "exported": false,
       "language": "typescript"
     },
     {
       "name": "matchTerm",
       "type": "function",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 42,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 39,
       "exported": false,
       "language": "typescript"
     },
     {
       "name": "scoreFile",
       "type": "function",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 48,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 45,
       "exported": false,
       "language": "typescript"
     },
     {
       "name": "FileEngine",
       "type": "class",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 119,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 104,
       "exported": true,
       "language": "typescript"
     },
     {
       "name": "constructor",
       "type": "function",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 122,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 109,
+      "exported": true,
+      "language": "typescript",
+      "parent": "FileEngine"
+    },
+    {
+      "name": "healthCheck",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 111,
       "exported": true,
       "language": "typescript",
       "parent": "FileEngine"
@@ -1156,60 +1262,305 @@
     {
       "name": "search",
       "type": "function",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\file-engine.ts",
-      "line": 124,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\file.ts",
+      "line": 120,
       "exported": true,
       "language": "typescript",
       "parent": "FileEngine"
     },
     {
+      "name": "EngineCapability",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 5,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
       "name": "ParsedQuery",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\libsql-engine.ts",
-      "line": 4,
-      "source": "../../types/search-types.js",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 5,
+      "source": "../../../types/search-types.js",
       "language": "typescript"
     },
     {
       "name": "SearchEngine",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\libsql-engine.ts",
-      "line": 4,
-      "source": "../../types/search-types.js",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 5,
+      "source": "../../../types/search-types.js",
       "language": "typescript"
     },
     {
       "name": "SearchOptions",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\libsql-engine.ts",
-      "line": 4,
-      "source": "../../types/search-types.js",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 5,
+      "source": "../../../types/search-types.js",
       "language": "typescript"
     },
     {
       "name": "SearchResult",
       "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\libsql-engine.ts",
-      "line": 4,
-      "source": "../../types/search-types.js",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 5,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "reciprocalRankFusion",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 6,
+      "source": "../rrf.js",
+      "language": "typescript"
+    },
+    {
+      "name": "normalizeScores",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 7,
+      "source": "../scorer.js",
+      "language": "typescript"
+    },
+    {
+      "name": "DEFAULT_WEIGHTS",
+      "type": "config",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 14,
+      "language": "typescript"
+    },
+    {
+      "name": "HybridSearch",
+      "type": "class",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 19,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "constructor",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 24,
+      "exported": true,
+      "language": "typescript",
+      "parent": "HybridSearch"
+    },
+    {
+      "name": "search",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\hybrid.ts",
+      "line": 30,
+      "exported": true,
+      "language": "typescript",
+      "parent": "HybridSearch"
+    },
+    {
+      "name": "EngineCapability",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "ParsedQuery",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchEngine",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchOptions",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchResult",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
       "language": "typescript"
     },
     {
       "name": "LibsqlEngine",
       "type": "class",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\libsql-engine.ts",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
       "line": 9,
       "exported": true,
       "language": "typescript"
     },
     {
-      "name": "search",
+      "name": "constructor",
       "type": "function",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\libsql-engine.ts",
-      "line": 12,
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 18,
       "exported": true,
       "language": "typescript",
       "parent": "LibsqlEngine"
+    },
+    {
+      "name": "healthCheck",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 22,
+      "exported": true,
+      "language": "typescript",
+      "parent": "LibsqlEngine"
+    },
+    {
+      "name": "tryConnect",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 36,
+      "exported": true,
+      "language": "typescript",
+      "parent": "LibsqlEngine"
+    },
+    {
+      "name": "buildFtsIndex",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 57,
+      "exported": true,
+      "language": "typescript",
+      "parent": "LibsqlEngine"
+    },
+    {
+      "name": "search",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 81,
+      "exported": true,
+      "language": "typescript",
+      "parent": "LibsqlEngine"
+    },
+    {
+      "name": "row",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\libsql.ts",
+      "line": 118,
+      "exported": true,
+      "language": "typescript",
+      "parent": "LibsqlEngine"
+    },
+    {
+      "name": "EngineCapability",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "ParsedQuery",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchEngine",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchStrategy",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 7,
+      "source": "../../../types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchEngineRegistry",
+      "type": "class",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 9,
+      "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "register",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 12,
+      "exported": true,
+      "language": "typescript",
+      "parent": "SearchEngineRegistry"
+    },
+    {
+      "name": "unregister",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 16,
+      "exported": true,
+      "language": "typescript",
+      "parent": "SearchEngineRegistry"
+    },
+    {
+      "name": "get",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 20,
+      "exported": true,
+      "language": "typescript",
+      "parent": "SearchEngineRegistry"
+    },
+    {
+      "name": "getByCapability",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 24,
+      "exported": true,
+      "language": "typescript",
+      "parent": "SearchEngineRegistry"
+    },
+    {
+      "name": "getAll",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 30,
+      "exported": true,
+      "language": "typescript",
+      "parent": "SearchEngineRegistry"
+    },
+    {
+      "name": "getSize",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 35,
+      "exported": true,
+      "language": "typescript",
+      "parent": "SearchEngineRegistry"
+    },
+    {
+      "name": "selectForQuery",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\engines\\registry.ts",
+      "line": 39,
+      "exported": true,
+      "language": "typescript",
+      "parent": "SearchEngineRegistry"
     },
     {
       "name": "ParsedQuery",
@@ -1229,14 +1580,6 @@
     },
     {
       "name": "SearchResult",
-      "type": "import",
-      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
-      "line": 4,
-      "source": "../../types/search-types.js",
-      "language": "typescript"
-    },
-    {
-      "name": "SearchEngine",
       "type": "import",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
       "line": 4,
@@ -1268,27 +1611,35 @@
       "language": "typescript"
     },
     {
+      "name": "SearchEngineRegistry",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
+      "line": 8,
+      "source": "./engines/registry.js",
+      "language": "typescript"
+    },
+    {
       "name": "SearchOrchestrator",
       "type": "class",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
-      "line": 9,
+      "line": 10,
       "exported": true,
       "language": "typescript"
     },
     {
-      "name": "addEngine",
+      "name": "constructor",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
-      "line": 12,
+      "line": 13,
       "exported": true,
       "language": "typescript",
       "parent": "SearchOrchestrator"
     },
     {
-      "name": "removeEngine",
+      "name": "getRegistry",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
-      "line": 16,
+      "line": 17,
       "exported": true,
       "language": "typescript",
       "parent": "SearchOrchestrator"
@@ -1297,7 +1648,7 @@
       "name": "getEngines",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
-      "line": 20,
+      "line": 21,
       "exported": true,
       "language": "typescript",
       "parent": "SearchOrchestrator"
@@ -1306,7 +1657,7 @@
       "name": "search",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
-      "line": 24,
+      "line": 25,
       "exported": true,
       "language": "typescript",
       "parent": "SearchOrchestrator"
@@ -1315,7 +1666,7 @@
       "name": "engine",
       "type": "function",
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\core\\search\\orchestrator.ts",
-      "line": 35,
+      "line": 42,
       "exported": true,
       "language": "typescript",
       "parent": "SearchOrchestrator"
@@ -1704,6 +2055,166 @@
       "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\src\\storage\\repo-manager.ts",
       "line": 69,
       "exported": true,
+      "language": "typescript"
+    },
+    {
+      "name": "describe",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 1,
+      "source": "vitest",
+      "language": "typescript"
+    },
+    {
+      "name": "it",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 1,
+      "source": "vitest",
+      "language": "typescript"
+    },
+    {
+      "name": "expect",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 1,
+      "source": "vitest",
+      "language": "typescript"
+    },
+    {
+      "name": "vi",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 1,
+      "source": "vitest",
+      "language": "typescript"
+    },
+    {
+      "name": "HybridSearch",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 2,
+      "source": "../src/core/search/engines/hybrid.js",
+      "language": "typescript"
+    },
+    {
+      "name": "ParsedQuery",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 3,
+      "source": "../src/types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchEngine",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 3,
+      "source": "../src/types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchResult",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 3,
+      "source": "../src/types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "mockEngine",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 5,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "result",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\hybrid-engine.test.ts",
+      "line": 20,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "describe",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 1,
+      "source": "vitest",
+      "language": "typescript"
+    },
+    {
+      "name": "it",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 1,
+      "source": "vitest",
+      "language": "typescript"
+    },
+    {
+      "name": "expect",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 1,
+      "source": "vitest",
+      "language": "typescript"
+    },
+    {
+      "name": "vi",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 1,
+      "source": "vitest",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchEngineRegistry",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 2,
+      "source": "../src/core/search/engines/registry.js",
+      "language": "typescript"
+    },
+    {
+      "name": "ParsedQuery",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 3,
+      "source": "../src/types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchEngine",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 3,
+      "source": "../src/types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "SearchResult",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 3,
+      "source": "../src/types/search-types.js",
+      "language": "typescript"
+    },
+    {
+      "name": "mockEngine",
+      "type": "function",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\tests\\registry.test.ts",
+      "line": 5,
+      "exported": false,
+      "language": "typescript"
+    },
+    {
+      "name": "defineConfig",
+      "type": "import",
+      "filePath": "D:\\Program Files (x86)\\dev\\memory-tool\\vitest.config.ts",
+      "line": 1,
+      "source": "vitest/config",
       "language": "typescript"
     }
   ]

@@ -1,2 +1,0 @@
-export declare function createLazyAction<T extends unknown[]>(importFn: () => Promise<Record<string, (...args: T) => Promise<void>>>, exportName: string): (...args: T) => Promise<void>;
-//# sourceMappingURL=lazy-action.d.ts.map

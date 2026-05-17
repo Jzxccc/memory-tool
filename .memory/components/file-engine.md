@@ -1,50 +1,46 @@
 ---
 id: component/file-engine
 type: component
-summary: File-based search engine — reads .md knowledge files directly, scores by weighted field matching (title, tags, summary, body), and filters by category/tag
-tags: [search, file, engine, scoring, markdown]
+summary: File-based keyword search engine — capabilities=['keyword'], priority=1, reads .md files with weighted field matching, implements SearchEngine interface
+tags: [search, file, engine, keyword]
 status: stable
 created: 2026-05-17
 lastModified: 2026-05-17
-filePath: src/core/search/file-engine.ts
+filePath: src/core/search/engines/file.ts
 language: typescript
 exports:
   - FileEngine
 depends_on:
   - system/types
   - component/repo-manager
-relates: [system/core, component/search-orchestrator, component/query-parser, flow/knowledge-search]
+relates: [system/core, component/search-orchestrator, component/search-registry]
 ---
 
 # FileEngine 文件搜索引擎
 
-直接读取 `.memory/` 下的 `.md` 知识文件进行搜索，不需要额外的数据库依赖。
+实现扩展的 `SearchEngine` 接口，作为 baseline keyword 引擎。
 
-## 评分机制 (WEIGHTS)
+## 引擎元数据
 
-文件搜索引擎为不同字段分配不同的匹配权重：
+| 属性 | 值 |
+|------|-----|
+| name | `file` |
+| capabilities | `['keyword']` |
+| priority | `1` (默认低于 LibsqlEngine) |
 
-- **title** — 最高权重（文件名/标题匹配）
-- **tags** — 标签精确匹配
-- **summary** — 摘要描述匹配
-- **body** — 正文内容全文匹配
+## healthCheck
 
-## 搜索流程
+检查 `.memory/` 目录是否存在。FileEngine 只要目录存在就是健康的。
 
-```
-listNodeFiles(memoryDir)
-  → 读取每个 .md 文件
-  → extractFrontmatter() + parseFrontmatter()
-  → matchTerm() 关键字匹配
-  → scoreFile() 加权评分
-  → 按 category/tag 过滤
-  → 排序返回
-```
+## 评分权重
 
-## 文件解析
+| 匹配区域 | 权重 |
+|----------|------|
+| ID_MATCH | 5.0 |
+| SUMMARY_MATCH | 3.0 |
+| TAG_MATCH | 1.0 |
+| BODY_OCCURRENCE | 0.5 |
 
-使用简单的字符串分割 (`---` 分隔符) 提取 frontmatter 和正文，不依赖 YAML 解析库。
+## 注册方式
 
-## 引擎协议
-
-实现 `SearchEngine` 接口，由 `SearchOrchestrator` 统一调度。
+通过 `defaultSearchEngineRegistry()` 工厂函数自动注册，或在 `SearchEngineRegistry` 中手动注册。始终作为 baseline 引擎可用。

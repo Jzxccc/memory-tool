@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "lastFullIndex": "2026-05-17T11:58:40.461Z",
-  "entryCount": 17,
+  "lastFullIndex": "2026-05-17T14:47:28.596Z",
+  "entryCount": 32,
   "entries": {
     "system/cli": {
       "id": "system/cli",
@@ -13,13 +13,13 @@
         "commander",
         "entry-point"
       ],
-      "lastModified": "2026-05-17T11:58:40.465Z",
+      "lastModified": "2026-05-17T14:47:28.598Z",
       "filePath": "systems\\cli.md"
     },
     "system/core": {
       "id": "system/core",
       "type": "system",
-      "contentHash": "b6aeaeed93d7f0f7b02a1de0a8fcff16537f15b8bf9c2b6f3d7ab122e2ba9700",
+      "contentHash": "0b247a231eec7af80c5bd442c19f713c073a3c39a1241d49519fdfcae73dea51",
       "frontmatterHash": "fa4c8d7c7d99b0d995781d974154ae8b400984f2f4e59828c1a933f9f08f28c6",
       "tags": [
         "core",
@@ -28,7 +28,7 @@
         "search",
         "engine"
       ],
-      "lastModified": "2026-05-17T11:58:40.465Z",
+      "lastModified": "2026-05-17T14:47:28.598Z",
       "filePath": "systems\\core.md"
     },
     "system/mcp": {
@@ -43,7 +43,7 @@
         "integration",
         "sdk"
       ],
-      "lastModified": "2026-05-17T11:58:40.465Z",
+      "lastModified": "2026-05-17T14:47:28.598Z",
       "filePath": "systems\\mcp.md"
     },
     "system/storage": {
@@ -58,7 +58,7 @@
         "caching",
         "filesystem"
       ],
-      "lastModified": "2026-05-17T11:58:40.466Z",
+      "lastModified": "2026-05-17T14:47:28.598Z",
       "filePath": "systems\\storage.md"
     },
     "system/types": {
@@ -72,7 +72,7 @@
         "schema",
         "interfaces"
       ],
-      "lastModified": "2026-05-17T11:58:40.466Z",
+      "lastModified": "2026-05-17T14:47:28.598Z",
       "filePath": "systems\\types.md"
     },
     "flow/code-analysis": {
@@ -86,7 +86,7 @@
         "scan",
         "extract"
       ],
-      "lastModified": "2026-05-17T11:58:40.467Z",
+      "lastModified": "2026-05-17T14:47:28.599Z",
       "filePath": "flows\\code-analysis.md"
     },
     "flow/knowledge-search": {
@@ -100,14 +100,28 @@
         "rrf",
         "ranking"
       ],
-      "lastModified": "2026-05-17T11:58:40.467Z",
+      "lastModified": "2026-05-17T14:47:28.599Z",
       "filePath": "flows\\knowledge-search.md"
+    },
+    "component/dump-writer": {
+      "id": "component/dump-writer",
+      "type": "component",
+      "contentHash": "b54ba85abcdfd327bae08cc5f55c40f3b7e77ceaa32b6908ef45b466222266e6",
+      "frontmatterHash": "3b6eaae284d9e316b705ea968e466832bbc5c26119de8e765ed05c747f5fd969",
+      "tags": [
+        "dump",
+        "serialization",
+        "cache",
+        "analyze"
+      ],
+      "lastModified": "2026-05-17T14:47:28.599Z",
+      "filePath": "components\\dump-writer.md"
     },
     "component/extractor": {
       "id": "component/extractor",
       "type": "component",
-      "contentHash": "3e269e5b4bbf8a7092e8b285877bc5e73ff48d49ccd225e31a5c4dd771ba7d30",
-      "frontmatterHash": "c1169676ecf814f2f93ddebbae471b7a9d33c2dbc62018c2b6b7f5de5b57f29f",
+      "contentHash": "f45800920e9f529ede752c5f23db5ebc0246a1d55c06708befacdc5a8f12ba21",
+      "frontmatterHash": "e3014abf19ec13996d206337e0cb676900f64d55cf1258ce845c9d6f9a533044",
       "tags": [
         "extractor",
         "tree-sitter",
@@ -115,29 +129,56 @@
         "symbols",
         "ast"
       ],
-      "lastModified": "2026-05-17T11:58:40.467Z",
+      "lastModified": "2026-05-17T14:47:28.599Z",
       "filePath": "components\\extractor.md"
     },
     "component/file-engine": {
       "id": "component/file-engine",
       "type": "component",
-      "contentHash": "d6c4006bf727fa918466349792be41252f10758089f8a75b073f8057c97facff",
-      "frontmatterHash": "4ae805405107012eb8bad467af9be24bb1a4d22d9afa40fa542e216661369bd6",
+      "contentHash": "6b6a815da2a0e8fb451693fb631dae7c5119b365a43d3450a1c1272e9f83725c",
+      "frontmatterHash": "c22426e2575e46e7997c140a15c44e7ef8dff909dfe0f4d160525480eefcb1cb",
       "tags": [
         "search",
         "file",
         "engine",
-        "scoring",
-        "markdown"
+        "keyword"
       ],
-      "lastModified": "2026-05-17T11:58:40.467Z",
+      "lastModified": "2026-05-17T14:47:28.600Z",
       "filePath": "components\\file-engine.md"
+    },
+    "component/graph-io": {
+      "id": "component/graph-io",
+      "type": "component",
+      "contentHash": "943f62e41cbfdc298b3c1ecf863a30f91f22afe906b37689fd7cd85a024eeeb0",
+      "frontmatterHash": "8475b41955d527166ea857e811b97b3f350ac8a3220d55bd73f8bdd1bb49019c",
+      "tags": [
+        "graph",
+        "io",
+        "serialization",
+        "json"
+      ],
+      "lastModified": "2026-05-17T14:47:28.600Z",
+      "filePath": "components\\graph-io.md"
+    },
+    "component/hybrid-search": {
+      "id": "component/hybrid-search",
+      "type": "component",
+      "contentHash": "ca077f6cc7bbdaf502b4b6ad3ffed412f681dbdc7f6a6548878ca1f686a01a50",
+      "frontmatterHash": "26be449155268f2f5c48c3d03d50a9153853f4aecac6fb5c0b6d866fa9f4f1b5",
+      "tags": [
+        "search",
+        "hybrid",
+        "fusion",
+        "engine"
+      ],
+      "lastModified": "2026-05-17T14:47:28.600Z",
+      "filePath": "components\\hybrid-search.md"
     },
     "component/index-handler": {
       "id": "component/index-handler",
       "type": "component",
-      "contentHash": "eb00d2abdcf6ee84d7238320119a879a2d3d99c63373736a629df7f1abe4b219",
-      "frontmatterHash": "b2d5ab02ea3615d67438f76b821706eea43fd28242d0f6169e52b08a84023766",
+      "contentHash": "4db4b433213ede59d53ed99079176eb088f4122ff389e252f227b875271c9dea",
+      "frontmatterHash": "cb12e2d31fb732048ca200f57df5683754aadf294269cda8b4901479d2fc5938",
       "tags": [
         "index",
         "hash",
@@ -145,42 +186,100 @@
         "cache",
         "staleness"
       ],
-      "lastModified": "2026-05-17T11:58:40.468Z",
+      "lastModified": "2026-05-17T14:47:28.600Z",
       "filePath": "components\\index-handler.md"
+    },
+    "component/lazy-action": {
+      "id": "component/lazy-action",
+      "type": "component",
+      "contentHash": "5e4e3b3b81ffae6d0c0435a7720ee92f5ac955d76059dca2348931da93d8040e",
+      "frontmatterHash": "9dfad79c51aed4997986f6703555df05640003e59716e85865ba5582ec6b2bd4",
+      "tags": [
+        "cli",
+        "lazy-load",
+        "commander",
+        "pattern"
+      ],
+      "lastModified": "2026-05-17T14:47:28.600Z",
+      "filePath": "components\\lazy-action.md"
+    },
+    "component/libsql-engine": {
+      "id": "component/libsql-engine",
+      "type": "component",
+      "contentHash": "4dde8a9bb9dc7e5e7730208df84a35644e7153f9f2c1a55e2bcdf1a9f0054ded",
+      "frontmatterHash": "4109364eabf065aefa9b8ab87cd6e40bf3a9ace17c78ed4877715d4d9974b074",
+      "tags": [
+        "search",
+        "libsql",
+        "sqlite",
+        "fts5",
+        "keyword"
+      ],
+      "lastModified": "2026-05-17T14:47:28.600Z",
+      "filePath": "components\\libsql-engine.md"
     },
     "component/local-backend": {
       "id": "component/local-backend",
       "type": "component",
-      "contentHash": "82d1204d76d1501e34017c27ecdd4c6b9d700dc8faa3248ecc04cf1857c7e538",
-      "frontmatterHash": "5b350a49cfc7cf4604d9384f965bed17e0dc88659eaa709533bf241122831608",
+      "contentHash": "55142f609556818d98ff89bcda0a289eabe5115aad0f39c347399c1561670db9",
+      "frontmatterHash": "9fdc4d048dc7c9437185332187ed6220ad7ad2065cf71f484a74b6d8b22cf168",
       "tags": [
         "backend",
         "facade",
         "unified",
-        "shared"
+        "registry"
       ],
-      "lastModified": "2026-05-17T11:58:40.468Z",
+      "lastModified": "2026-05-17T14:47:28.600Z",
       "filePath": "components\\local-backend.md"
+    },
+    "component/mcp-resources": {
+      "id": "component/mcp-resources",
+      "type": "component",
+      "contentHash": "50dbb6f9e25683b93fc591615e732fe4339452e8342c678da24b4b8abc7bfdfe",
+      "frontmatterHash": "b9ca57517a2c71bba7ca36e6fe14949f4979213193d1b9144a127cc7dcc33e24",
+      "tags": [
+        "mcp",
+        "resources",
+        "uri",
+        "definitions"
+      ],
+      "lastModified": "2026-05-17T14:47:28.600Z",
+      "filePath": "components\\mcp-resources.md"
     },
     "component/mcp-server": {
       "id": "component/mcp-server",
       "type": "component",
-      "contentHash": "51642d6a23a9f51ce2c1f49ba0a834d5b197256f17cb21ded193579223f37eb8",
-      "frontmatterHash": "91ddbe443b9ef75fa3893da6bca6ef8ae9363cd02e4345d4d03e91e5f62143bf",
+      "contentHash": "863bb453080778ce815a4cc5394ad0b46806f14a921d6c2708355de7aea63115",
+      "frontmatterHash": "58f67aa6fa2318cecefc686e6fe7a66ec0e860285f9f95b89cf157ff421148d2",
       "tags": [
         "mcp",
         "server",
         "stdio",
-        "integration"
+        "integration",
+        "sdk"
       ],
-      "lastModified": "2026-05-17T11:58:40.468Z",
+      "lastModified": "2026-05-17T14:47:28.601Z",
       "filePath": "components\\mcp-server.md"
+    },
+    "component/mcp-tools": {
+      "id": "component/mcp-tools",
+      "type": "component",
+      "contentHash": "ab73fc9a0c65343abd447618be60a16877650f7368f5b6396b630acd0c47174e",
+      "frontmatterHash": "2b936037ab908008091fc59d70f5bf21a346c8d55e50d13659c2146d1acadb42",
+      "tags": [
+        "mcp",
+        "tools",
+        "schema",
+        "definitions"
+      ],
+      "lastModified": "2026-05-17T14:47:28.601Z",
+      "filePath": "components\\mcp-tools.md"
     },
     "component/memory-graph": {
       "id": "component/memory-graph",
       "type": "component",
-      "contentHash": "a8aa4825a4fc1fec8bdb0775b761a3e08e12b7996072a109da0914dd986f97ac",
-      "frontmatterHash": "100012fdf12a346c53448e4cb82d54d70ea757053c4e147597506a799023e2a8",
+      "contentHash": "9929486e644292a9fafdb182cd57be7061da7da216398af862240699550cb142",
+      "frontmatterHash": "cdb62c5ae2a01619ecb6f0204b6c0b8542a16c6b8ab3440b933950779bb6050f",
       "tags": [
         "graph",
         "adjacency-list",
@@ -188,8 +287,22 @@
         "bfs",
         "data-structure"
       ],
-      "lastModified": "2026-05-17T11:58:40.469Z",
+      "lastModified": "2026-05-17T14:47:28.601Z",
       "filePath": "components\\memory-graph.md"
+    },
+    "component/query-parser": {
+      "id": "component/query-parser",
+      "type": "component",
+      "contentHash": "8277f8f65fd050b6916e1b2b003cc15a966d5a7588af3d9a0079cc95282704f3",
+      "frontmatterHash": "24c00a5d32cfe1fe207c0a021ee1627527283b17b229476301d80e825deb4e21",
+      "tags": [
+        "search",
+        "parser",
+        "query",
+        "boolean"
+      ],
+      "lastModified": "2026-05-17T14:47:28.601Z",
+      "filePath": "components\\query-parser.md"
     },
     "component/repo-manager": {
       "id": "component/repo-manager",
@@ -202,8 +315,23 @@
         "filesystem",
         "paths"
       ],
-      "lastModified": "2026-05-17T11:58:40.469Z",
+      "lastModified": "2026-05-17T14:47:28.601Z",
       "filePath": "components\\repo-manager.md"
+    },
+    "component/rrf": {
+      "id": "component/rrf",
+      "type": "component",
+      "contentHash": "5820adffdda9a4bd518243eaa6b684cc5f1a78ee834c3ab71f6f64bc88dd7446",
+      "frontmatterHash": "fec5ea393e7465a4e636876ddecc1e6bb2bbc19b763bb1e782b274a93a7a8b73",
+      "tags": [
+        "search",
+        "rrf",
+        "fusion",
+        "ranking",
+        "algorithm"
+      ],
+      "lastModified": "2026-05-17T14:47:28.601Z",
+      "filePath": "components\\rrf.md"
     },
     "component/scanner": {
       "id": "component/scanner",
@@ -215,14 +343,28 @@
         "filesystem",
         "discovery"
       ],
-      "lastModified": "2026-05-17T11:58:40.469Z",
+      "lastModified": "2026-05-17T14:47:28.602Z",
       "filePath": "components\\scanner.md"
+    },
+    "component/scorer": {
+      "id": "component/scorer",
+      "type": "component",
+      "contentHash": "7f7b0565f5e7893618f7f3dc54b2a08e0e1c4287572696123ff3aa480212786c",
+      "frontmatterHash": "e272f74b0349a7b64cf4259abad7f9640283fa810bae92fad110bff15f833eb4",
+      "tags": [
+        "search",
+        "scorer",
+        "normalization",
+        "ranking"
+      ],
+      "lastModified": "2026-05-17T14:47:28.602Z",
+      "filePath": "components\\scorer.md"
     },
     "component/search-orchestrator": {
       "id": "component/search-orchestrator",
       "type": "component",
-      "contentHash": "ee9397f0df52276e18546aeae954aedc20a8dd7b7e08e4f31f00af42abcf7929",
-      "frontmatterHash": "5dc20bbe22212eb1695f32a5ff298695d2c04ab03753a0ea0892a0d13b3b6e96",
+      "contentHash": "24fbb081da39c25d3f161e81c98f80004c8e7e36f187f84fd47ab359b543aae0",
+      "frontmatterHash": "df8b3a3cf466e37ea1bf1e8216a4892c58e266629bc6c5e170a6de97bae4fc30",
       "tags": [
         "search",
         "orchestrator",
@@ -230,8 +372,22 @@
         "parallel",
         "fusion"
       ],
-      "lastModified": "2026-05-17T11:58:40.469Z",
+      "lastModified": "2026-05-17T14:47:28.602Z",
       "filePath": "components\\search-orchestrator.md"
+    },
+    "component/search-registry": {
+      "id": "component/search-registry",
+      "type": "component",
+      "contentHash": "ce1174090535cd584c198d2d24264f655363fec07f401f7a0b15d99a92e62119",
+      "frontmatterHash": "883c70b6fab9dca56f2f551d809a733df9d43e6f50c20daaf0b26a26f3e72a74",
+      "tags": [
+        "search",
+        "registry",
+        "discovery",
+        "engine"
+      ],
+      "lastModified": "2026-05-17T14:47:28.602Z",
+      "filePath": "components\\search-registry.md"
     },
     "config/storage-constants": {
       "id": "config/storage-constants",
@@ -244,8 +400,63 @@
         "paths",
         "constants"
       ],
-      "lastModified": "2026-05-17T11:58:40.469Z",
+      "lastModified": "2026-05-17T14:47:28.602Z",
       "filePath": "configs\\storage-constants.md"
+    },
+    "api/memory-categories": {
+      "id": "api/memory-categories",
+      "type": "api",
+      "contentHash": "05e2c8383380a26d2ec4fd3f9fa6e795805c777e5ac4ff0773aadfaa36d9c094",
+      "frontmatterHash": "a6a4cbb0e404b6f2a885f3b1dae9c5e03e1e2a3abea25dfcbde8d549211077a1",
+      "tags": [
+        "api",
+        "mcp",
+        "categories"
+      ],
+      "lastModified": "2026-05-17T14:47:28.602Z",
+      "filePath": "apis\\memory-categories.md"
+    },
+    "api/memory-read": {
+      "id": "api/memory-read",
+      "type": "api",
+      "contentHash": "1730c69cb101f71c32292c9d2a8037a825c0be3a1e67da23d32339deb62f91b8",
+      "frontmatterHash": "a832c3d7103dd84d9c7469cf4fb589c724c449d0044176dba53b8627b3b6b140",
+      "tags": [
+        "api",
+        "mcp",
+        "read",
+        "tool"
+      ],
+      "lastModified": "2026-05-17T14:47:28.602Z",
+      "filePath": "apis\\memory-read.md"
+    },
+    "api/memory-search": {
+      "id": "api/memory-search",
+      "type": "api",
+      "contentHash": "731c90b68257936ab924bd2cb51e6ab234794f185079898ff6313e2bdce00a09",
+      "frontmatterHash": "71278ab158bf12c68bed4748708f3952eeee75067491c3730d26d15e99af7ad0",
+      "tags": [
+        "api",
+        "mcp",
+        "search",
+        "tool"
+      ],
+      "lastModified": "2026-05-17T14:47:28.602Z",
+      "filePath": "apis\\memory-search.md"
+    },
+    "api/memory-status": {
+      "id": "api/memory-status",
+      "type": "api",
+      "contentHash": "cf43fb3ff2609f8f6ed10b40ad44867323674e71c0ac30c1a5203312eea962a0",
+      "frontmatterHash": "74d270f219ff57532a9e22e85388a83ba667d8aa1a32c19ca166f45063576ea5",
+      "tags": [
+        "api",
+        "mcp",
+        "status",
+        "health"
+      ],
+      "lastModified": "2026-05-17T14:47:28.602Z",
+      "filePath": "apis\\memory-status.md"
     }
   }
 }

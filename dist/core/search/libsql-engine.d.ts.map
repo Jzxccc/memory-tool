@@ -1,1 +1,0 @@
-{"version":3,"file":"libsql-engine.d.ts","sourceRoot":"","sources":["../../../src/core/search/libsql-engine.ts"],"names":[],"mappings":"AAGA,OAAO,KAAK,EAAE,WAAW,EAAE,YAAY,EAAE,aAAa,EAAE,YAAY,EAAE,MAAM,6BAA6B,CAAC;AAK1G,qBAAa,YAAa,YAAW,YAAY;IAC/C,IAAI,SAAY;IAEV,MAAM,CAAC,KAAK,EAAE,WAAW,EAAE,OAAO,EAAE,aAAa,GAAG,OAAO,CAAC,YAAY,EAAE,CAAC;CAQlF"}
