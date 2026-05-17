@@ -1,59 +1,251 @@
 {
   "schemaVersion": 1,
-  "lastFullIndex": "2026-05-16T12:37:42.070Z",
-  "entryCount": 4,
+  "lastFullIndex": "2026-05-17T11:58:40.461Z",
+  "entryCount": 17,
   "entries": {
-    "system/auth-system": {
-      "id": "system/auth-system",
+    "system/cli": {
+      "id": "system/cli",
       "type": "system",
-      "contentHash": "9c000a19618eecb620fb8060303d91001eb4ed1d95799c7f82a8b1090c7f9336",
-      "frontmatterHash": "7958f6c99c68d8ca6feae124a8ead331ec52b9001037230d76a982bba854a42a",
+      "contentHash": "0e4a726671a70da06c60e6657b28ce38b89a023c91887546bcaa376219ead3d0",
+      "frontmatterHash": "9402a31a44ed83da29e0e99d4e32ddcc32faf4d21c498b0f2572904269ed9638",
       "tags": [
-        "auth",
-        "security",
-        "core"
+        "cli",
+        "commander",
+        "entry-point"
       ],
-      "lastModified": "2026-05-16T12:37:42.071Z",
-      "filePath": "systems\\auth-system.md"
+      "lastModified": "2026-05-17T11:58:40.465Z",
+      "filePath": "systems\\cli.md"
     },
-    "flow/login-flow": {
-      "id": "flow/login-flow",
+    "system/core": {
+      "id": "system/core",
+      "type": "system",
+      "contentHash": "b6aeaeed93d7f0f7b02a1de0a8fcff16537f15b8bf9c2b6f3d7ab122e2ba9700",
+      "frontmatterHash": "fa4c8d7c7d99b0d995781d974154ae8b400984f2f4e59828c1a933f9f08f28c6",
+      "tags": [
+        "core",
+        "ingestion",
+        "graph",
+        "search",
+        "engine"
+      ],
+      "lastModified": "2026-05-17T11:58:40.465Z",
+      "filePath": "systems\\core.md"
+    },
+    "system/mcp": {
+      "id": "system/mcp",
+      "type": "system",
+      "contentHash": "850df606fbdfe45cecadb5c6b0f7018100225b71668a8d692d2aa6c7084d28b1",
+      "frontmatterHash": "51b4633edd8d93335736b32b39f8b50d18a55f71306733adbcbc2d476d653449",
+      "tags": [
+        "mcp",
+        "server",
+        "stdio",
+        "integration",
+        "sdk"
+      ],
+      "lastModified": "2026-05-17T11:58:40.465Z",
+      "filePath": "systems\\mcp.md"
+    },
+    "system/storage": {
+      "id": "system/storage",
+      "type": "system",
+      "contentHash": "94eec8e25128c2c9d474450ee12828fd7b9d234be847caff6e09c28549a131cc",
+      "frontmatterHash": "4ce100c79299eaf4047d5829fc5e007e5f89538c090a9c6c4d64c7389b9e38d4",
+      "tags": [
+        "storage",
+        "index",
+        "hash",
+        "caching",
+        "filesystem"
+      ],
+      "lastModified": "2026-05-17T11:58:40.466Z",
+      "filePath": "systems\\storage.md"
+    },
+    "system/types": {
+      "id": "system/types",
+      "type": "system",
+      "contentHash": "a4035af86a996c13a77fd081b8a8f3b03990cf06ce555620d3ad77c96e55df11",
+      "frontmatterHash": "9026ad34f85eeae1825a1628bdbca8f7b9a603680e46e725579506763289fe03",
+      "tags": [
+        "types",
+        "frontmatter",
+        "schema",
+        "interfaces"
+      ],
+      "lastModified": "2026-05-17T11:58:40.466Z",
+      "filePath": "systems\\types.md"
+    },
+    "flow/code-analysis": {
+      "id": "flow/code-analysis",
       "type": "flow",
-      "contentHash": "42e36907bf17b3c248a2bbd4fbdaa229fd7bb0bf59accfbb6d562b036fbda142",
-      "frontmatterHash": "a61452af7a4cced5a28247a536d28d69f8523f1fda744ae368000d1fe8d8fdd1",
+      "contentHash": "aaa916b8443427594130a0314f508df09f783d41bf20bedffe9a13d3ee87f624",
+      "frontmatterHash": "a3316019ed634d75774f27b14cea5c0edee0ba74694018163e86ee36a7854952",
       "tags": [
-        "auth",
-        "login",
-        "jwt"
+        "analysis",
+        "pipeline",
+        "scan",
+        "extract"
       ],
-      "lastModified": "2026-05-16T12:37:42.072Z",
-      "filePath": "flows\\login-flow.md"
+      "lastModified": "2026-05-17T11:58:40.467Z",
+      "filePath": "flows\\code-analysis.md"
     },
-    "component/token-service": {
-      "id": "component/token-service",
+    "flow/knowledge-search": {
+      "id": "flow/knowledge-search",
+      "type": "flow",
+      "contentHash": "69419bb80b1838f726fb885608dc2bde27235172efe741830dd7de30cb260641",
+      "frontmatterHash": "074cb84b44a6b63e5795062a53bbe37ce9d3648dfa6ddf4d3f26377b5e58407f",
+      "tags": [
+        "search",
+        "retrieval",
+        "rrf",
+        "ranking"
+      ],
+      "lastModified": "2026-05-17T11:58:40.467Z",
+      "filePath": "flows\\knowledge-search.md"
+    },
+    "component/extractor": {
+      "id": "component/extractor",
       "type": "component",
-      "contentHash": "5bceaf2f8687be291ab54e45ef5c739c5e26e534115c54456cb6b30c5f42f5f9",
-      "frontmatterHash": "cbf12590001db55eb3651c463b13c84f9427e2024b82947009b5b8cdfcffa72d",
+      "contentHash": "3e269e5b4bbf8a7092e8b285877bc5e73ff48d49ccd225e31a5c4dd771ba7d30",
+      "frontmatterHash": "c1169676ecf814f2f93ddebbae471b7a9d33c2dbc62018c2b6b7f5de5b57f29f",
       "tags": [
-        "jwt",
-        "token",
-        "auth"
+        "extractor",
+        "tree-sitter",
+        "regex",
+        "symbols",
+        "ast"
       ],
-      "lastModified": "2026-05-16T12:37:42.072Z",
-      "filePath": "components\\token-service.md"
+      "lastModified": "2026-05-17T11:58:40.467Z",
+      "filePath": "components\\extractor.md"
     },
-    "config/jwt-secret": {
-      "id": "config/jwt-secret",
-      "type": "config",
-      "contentHash": "e7187ababe8593c4123ea6f8643a65c22751215d198e1993bc78fdf7d6785951",
-      "frontmatterHash": "563ccdd377fcd64e88ac55d02b1ac8cb31ecdccba6fe200131146ef378a2749f",
+    "component/file-engine": {
+      "id": "component/file-engine",
+      "type": "component",
+      "contentHash": "d6c4006bf727fa918466349792be41252f10758089f8a75b073f8057c97facff",
+      "frontmatterHash": "4ae805405107012eb8bad467af9be24bb1a4d22d9afa40fa542e216661369bd6",
       "tags": [
-        "jwt",
-        "security",
-        "secret"
+        "search",
+        "file",
+        "engine",
+        "scoring",
+        "markdown"
       ],
-      "lastModified": "2026-05-16T12:37:42.072Z",
-      "filePath": "configs\\jwt-secret.md"
+      "lastModified": "2026-05-17T11:58:40.467Z",
+      "filePath": "components\\file-engine.md"
+    },
+    "component/index-handler": {
+      "id": "component/index-handler",
+      "type": "component",
+      "contentHash": "eb00d2abdcf6ee84d7238320119a879a2d3d99c63373736a629df7f1abe4b219",
+      "frontmatterHash": "b2d5ab02ea3615d67438f76b821706eea43fd28242d0f6169e52b08a84023766",
+      "tags": [
+        "index",
+        "hash",
+        "sha256",
+        "cache",
+        "staleness"
+      ],
+      "lastModified": "2026-05-17T11:58:40.468Z",
+      "filePath": "components\\index-handler.md"
+    },
+    "component/local-backend": {
+      "id": "component/local-backend",
+      "type": "component",
+      "contentHash": "82d1204d76d1501e34017c27ecdd4c6b9d700dc8faa3248ecc04cf1857c7e538",
+      "frontmatterHash": "5b350a49cfc7cf4604d9384f965bed17e0dc88659eaa709533bf241122831608",
+      "tags": [
+        "backend",
+        "facade",
+        "unified",
+        "shared"
+      ],
+      "lastModified": "2026-05-17T11:58:40.468Z",
+      "filePath": "components\\local-backend.md"
+    },
+    "component/mcp-server": {
+      "id": "component/mcp-server",
+      "type": "component",
+      "contentHash": "51642d6a23a9f51ce2c1f49ba0a834d5b197256f17cb21ded193579223f37eb8",
+      "frontmatterHash": "91ddbe443b9ef75fa3893da6bca6ef8ae9363cd02e4345d4d03e91e5f62143bf",
+      "tags": [
+        "mcp",
+        "server",
+        "stdio",
+        "integration"
+      ],
+      "lastModified": "2026-05-17T11:58:40.468Z",
+      "filePath": "components\\mcp-server.md"
+    },
+    "component/memory-graph": {
+      "id": "component/memory-graph",
+      "type": "component",
+      "contentHash": "a8aa4825a4fc1fec8bdb0775b761a3e08e12b7996072a109da0914dd986f97ac",
+      "frontmatterHash": "100012fdf12a346c53448e4cb82d54d70ea757053c4e147597506a799023e2a8",
+      "tags": [
+        "graph",
+        "adjacency-list",
+        "traversal",
+        "bfs",
+        "data-structure"
+      ],
+      "lastModified": "2026-05-17T11:58:40.469Z",
+      "filePath": "components\\memory-graph.md"
+    },
+    "component/repo-manager": {
+      "id": "component/repo-manager",
+      "type": "component",
+      "contentHash": "55fe0b0bc120d06cc794732674b43a98774341f9482736eba89409924d678a16",
+      "frontmatterHash": "9bc0503f838258431594d14461fbd11921c297a4f5b12b1a38a09d025c884b9a",
+      "tags": [
+        "storage",
+        "directory",
+        "filesystem",
+        "paths"
+      ],
+      "lastModified": "2026-05-17T11:58:40.469Z",
+      "filePath": "components\\repo-manager.md"
+    },
+    "component/scanner": {
+      "id": "component/scanner",
+      "type": "component",
+      "contentHash": "4b704d04d5b77ba63d85e6bbf40b12ee7c682981674c7525c49da48e725bad2f",
+      "frontmatterHash": "b9080db65ee5b88a1801b003bbf9f5c76f3397f92a9d2daed92e6ce3b9c119a0",
+      "tags": [
+        "scanner",
+        "filesystem",
+        "discovery"
+      ],
+      "lastModified": "2026-05-17T11:58:40.469Z",
+      "filePath": "components\\scanner.md"
+    },
+    "component/search-orchestrator": {
+      "id": "component/search-orchestrator",
+      "type": "component",
+      "contentHash": "ee9397f0df52276e18546aeae954aedc20a8dd7b7e08e4f31f00af42abcf7929",
+      "frontmatterHash": "5dc20bbe22212eb1695f32a5ff298695d2c04ab03753a0ea0892a0d13b3b6e96",
+      "tags": [
+        "search",
+        "orchestrator",
+        "rrf",
+        "parallel",
+        "fusion"
+      ],
+      "lastModified": "2026-05-17T11:58:40.469Z",
+      "filePath": "components\\search-orchestrator.md"
+    },
+    "config/storage-constants": {
+      "id": "config/storage-constants",
+      "type": "config",
+      "contentHash": "568f1864e0da7d8daa37e6a3a34aba919f344285ab2e2f30666306e197a5047d",
+      "frontmatterHash": "78df087e558097743804cb374b0b54fbb54c13d73bac434a4eef1e077b4b1c7c",
+      "tags": [
+        "config",
+        "storage",
+        "paths",
+        "constants"
+      ],
+      "lastModified": "2026-05-17T11:58:40.469Z",
+      "filePath": "configs\\storage-constants.md"
     }
   }
 }

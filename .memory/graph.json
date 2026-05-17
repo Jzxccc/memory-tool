@@ -1,45 +1,315 @@
 {
   "relationships": [
     {
-      "from": "system/auth-system",
-      "to": "flow/login-flow",
+      "from": "system/cli",
+      "to": "system/core",
       "type": "references",
       "confidence": 1
     },
     {
-      "from": "system/auth-system",
-      "to": "component/token-service",
+      "from": "system/cli",
+      "to": "system/mcp",
       "type": "references",
       "confidence": 1
     },
     {
-      "from": "system/auth-system",
-      "to": "config/jwt-secret",
+      "from": "system/cli",
+      "to": "system/storage",
       "type": "references",
       "confidence": 1
     },
     {
-      "from": "system/auth-system",
-      "to": "api/auth-login",
+      "from": "system/cli",
+      "to": "flow/code-analysis",
       "type": "references",
       "confidence": 1
     },
     {
-      "from": "component/token-service",
-      "to": "flow/login-flow",
+      "from": "system/cli",
+      "to": "flow/knowledge-search",
       "type": "references",
       "confidence": 1
     },
     {
-      "from": "component/token-service",
-      "to": "api/auth-login",
+      "from": "system/core",
+      "to": "system/cli",
       "type": "references",
       "confidence": 1
     },
     {
-      "from": "component/token-service",
-      "to": "config/jwt-secret",
-      "type": "depends_on",
+      "from": "system/core",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/core",
+      "to": "system/storage",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/core",
+      "to": "system/types",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/core",
+      "to": "component/scanner",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/core",
+      "to": "component/extractor",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/core",
+      "to": "component/memory-graph",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/core",
+      "to": "component/search-orchestrator",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/core",
+      "to": "component/file-engine",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/core",
+      "to": "component/local-backend",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/mcp",
+      "to": "system/cli",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/mcp",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/mcp",
+      "to": "component/local-backend",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/mcp",
+      "to": "component/mcp-server",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/storage",
+      "to": "system/types",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/storage",
+      "to": "component/repo-manager",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/storage",
+      "to": "component/index-handler",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/storage",
+      "to": "config/storage-constants",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/types",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "system/types",
+      "to": "system/storage",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/extractor",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/extractor",
+      "to": "flow/code-analysis",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/file-engine",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/file-engine",
+      "to": "component/search-orchestrator",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/file-engine",
+      "to": "component/query-parser",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/file-engine",
+      "to": "flow/knowledge-search",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/index-handler",
+      "to": "system/storage",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/index-handler",
+      "to": "component/repo-manager",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/index-handler",
+      "to": "config/storage-constants",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/local-backend",
+      "to": "system/cli",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/local-backend",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/local-backend",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/mcp-server",
+      "to": "system/mcp",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/memory-graph",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/memory-graph",
+      "to": "component/graph-io",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/repo-manager",
+      "to": "system/storage",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/repo-manager",
+      "to": "config/storage-constants",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/repo-manager",
+      "to": "component/index-handler",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/scanner",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/scanner",
+      "to": "component/extractor",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/scanner",
+      "to": "flow/code-analysis",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/search-orchestrator",
+      "to": "system/core",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/search-orchestrator",
+      "to": "component/file-engine",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/search-orchestrator",
+      "to": "component/libsql-engine",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "component/search-orchestrator",
+      "to": "flow/knowledge-search",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "config/storage-constants",
+      "to": "system/storage",
+      "type": "references",
+      "confidence": 1
+    },
+    {
+      "from": "config/storage-constants",
+      "to": "component/repo-manager",
+      "type": "references",
       "confidence": 1
     }
   ]
