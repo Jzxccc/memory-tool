@@ -1,2 +1,7 @@
 node_modules
 dist
+
+# Generated skill files
+.claude/skills/memory/*/SKILL.md
+.codebuddy/skills/memory-*/SKILL.md
+.lingma/skills/memory-*/SKILL.md

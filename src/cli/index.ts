@@ -149,4 +149,25 @@ Provides 3 resources: memory://categories, memory://status, memory://tags
 `)
   .action(createLazyAction(() => import('./mcp.js'), 'mcpCommand'));
 
+// memory init
+program
+  .command('init')
+  .description('Deploy memory skill files to target tool directories')
+  .option('--tool <name>', 'Target tool (claude|codebuddy|lingma)')
+  .option('--all', 'Deploy to all supported tools')
+  .option('--force', 'Overwrite existing SKILL.md files')
+  .addHelpText('after', `
+Examples:
+  $ memory init --tool claude                      Deploy to Claude only
+  $ memory init --tool codebuddy                   Deploy to CodeBuddy only
+  $ memory init --all                              Deploy to all tools
+  $ memory init --all --force                      Overwrite all existing files
+
+Directory conventions:
+  Claude:    .claude/skills/memory/{name}/SKILL.md  (nested)
+  CodeBuddy: .codebuddy/skills/{name}/SKILL.md      (flat)
+  Lingma:    .lingma/skills/{name}/SKILL.md         (flat)
+`)
+  .action(createLazyAction(() => import('./init.js'), 'initCommand'));
+
 program.parse();
