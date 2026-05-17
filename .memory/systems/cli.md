@@ -33,3 +33,16 @@ Command-line interface 系统是 memory-tool 的用户界面入口，通过 `mem
 ## 搜索语法
 
 搜索支持使用 `|` 进行 OR 查询、`&` 进行 AND 查询，可按类型、标签过滤。
+
+## 帮助系统
+
+每个命令均支持 `-h` / `--help` 查看详细帮助和使用示例：
+
+```bash
+memory -h              # 主程序帮助 + 常见工作流
+memory -V              # 显示版本号
+memory search -h       # search 命令的选项和示例
+memory rebuild -h      # rebuild 命令的选项和示例
+```
+
+各命令帮助包含实际可运行的示例命令。主程序帮助展示了典型工作流（analyze → build → rebuild → search）。

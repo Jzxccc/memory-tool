@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "lastFullIndex": "2026-05-17T14:47:28.596Z",
+  "lastFullIndex": "2026-05-17T15:03:42.984Z",
   "entryCount": 32,
   "entries": {
     "system/cli": {
       "id": "system/cli",
       "type": "system",
-      "contentHash": "0e4a726671a70da06c60e6657b28ce38b89a023c91887546bcaa376219ead3d0",
+      "contentHash": "9658b3e82c5cd865105bdbf8ea9dbcbb281f531c79e8c4a4d14e0c4d254a51a8",
       "frontmatterHash": "9402a31a44ed83da29e0e99d4e32ddcc32faf4d21c498b0f2572904269ed9638",
       "tags": [
         "cli",
         "commander",
         "entry-point"
       ],
-      "lastModified": "2026-05-17T14:47:28.598Z",
+      "lastModified": "2026-05-17T15:03:42.985Z",
       "filePath": "systems\\cli.md"
     },
     "system/core": {
@@ -28,7 +28,7 @@
         "search",
         "engine"
       ],
-      "lastModified": "2026-05-17T14:47:28.598Z",
+      "lastModified": "2026-05-17T15:03:42.986Z",
       "filePath": "systems\\core.md"
     },
     "system/mcp": {
@@ -43,7 +43,7 @@
         "integration",
         "sdk"
       ],
-      "lastModified": "2026-05-17T14:47:28.598Z",
+      "lastModified": "2026-05-17T15:03:42.986Z",
       "filePath": "systems\\mcp.md"
     },
     "system/storage": {
@@ -58,7 +58,7 @@
         "caching",
         "filesystem"
       ],
-      "lastModified": "2026-05-17T14:47:28.598Z",
+      "lastModified": "2026-05-17T15:03:42.986Z",
       "filePath": "systems\\storage.md"
     },
     "system/types": {
@@ -72,7 +72,7 @@
         "schema",
         "interfaces"
       ],
-      "lastModified": "2026-05-17T14:47:28.598Z",
+      "lastModified": "2026-05-17T15:03:42.986Z",
       "filePath": "systems\\types.md"
     },
     "flow/code-analysis": {
@@ -86,7 +86,7 @@
         "scan",
         "extract"
       ],
-      "lastModified": "2026-05-17T14:47:28.599Z",
+      "lastModified": "2026-05-17T15:03:42.986Z",
       "filePath": "flows\\code-analysis.md"
     },
     "flow/knowledge-search": {
@@ -100,7 +100,7 @@
         "rrf",
         "ranking"
       ],
-      "lastModified": "2026-05-17T14:47:28.599Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "flows\\knowledge-search.md"
     },
     "component/dump-writer": {
@@ -114,7 +114,7 @@
         "cache",
         "analyze"
       ],
-      "lastModified": "2026-05-17T14:47:28.599Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\dump-writer.md"
     },
     "component/extractor": {
@@ -129,7 +129,7 @@
         "symbols",
         "ast"
       ],
-      "lastModified": "2026-05-17T14:47:28.599Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\extractor.md"
     },
     "component/file-engine": {
@@ -143,7 +143,7 @@
         "engine",
         "keyword"
       ],
-      "lastModified": "2026-05-17T14:47:28.600Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\file-engine.md"
     },
     "component/graph-io": {
@@ -157,7 +157,7 @@
         "serialization",
         "json"
       ],
-      "lastModified": "2026-05-17T14:47:28.600Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\graph-io.md"
     },
     "component/hybrid-search": {
@@ -171,7 +171,7 @@
         "fusion",
         "engine"
       ],
-      "lastModified": "2026-05-17T14:47:28.600Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\hybrid-search.md"
     },
     "component/index-handler": {
@@ -186,7 +186,7 @@
         "cache",
         "staleness"
       ],
-      "lastModified": "2026-05-17T14:47:28.600Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\index-handler.md"
     },
     "component/lazy-action": {
@@ -200,7 +200,7 @@
         "commander",
         "pattern"
       ],
-      "lastModified": "2026-05-17T14:47:28.600Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\lazy-action.md"
     },
     "component/libsql-engine": {
@@ -215,7 +215,7 @@
         "fts5",
         "keyword"
       ],
-      "lastModified": "2026-05-17T14:47:28.600Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\libsql-engine.md"
     },
     "component/local-backend": {
@@ -229,7 +229,7 @@
         "unified",
         "registry"
       ],
-      "lastModified": "2026-05-17T14:47:28.600Z",
+      "lastModified": "2026-05-17T15:03:42.987Z",
       "filePath": "components\\local-backend.md"
     },
     "component/mcp-resources": {
@@ -243,7 +243,7 @@
         "uri",
         "definitions"
       ],
-      "lastModified": "2026-05-17T14:47:28.600Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\mcp-resources.md"
     },
     "component/mcp-server": {
@@ -258,7 +258,7 @@
         "integration",
         "sdk"
       ],
-      "lastModified": "2026-05-17T14:47:28.601Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\mcp-server.md"
     },
     "component/mcp-tools": {
@@ -272,7 +272,7 @@
         "schema",
         "definitions"
       ],
-      "lastModified": "2026-05-17T14:47:28.601Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\mcp-tools.md"
     },
     "component/memory-graph": {
@@ -287,7 +287,7 @@
         "bfs",
         "data-structure"
       ],
-      "lastModified": "2026-05-17T14:47:28.601Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\memory-graph.md"
     },
     "component/query-parser": {
@@ -301,7 +301,7 @@
         "query",
         "boolean"
       ],
-      "lastModified": "2026-05-17T14:47:28.601Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\query-parser.md"
     },
     "component/repo-manager": {
@@ -315,7 +315,7 @@
         "filesystem",
         "paths"
       ],
-      "lastModified": "2026-05-17T14:47:28.601Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\repo-manager.md"
     },
     "component/rrf": {
@@ -330,7 +330,7 @@
         "ranking",
         "algorithm"
       ],
-      "lastModified": "2026-05-17T14:47:28.601Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\rrf.md"
     },
     "component/scanner": {
@@ -343,7 +343,7 @@
         "filesystem",
         "discovery"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\scanner.md"
     },
     "component/scorer": {
@@ -357,7 +357,7 @@
         "normalization",
         "ranking"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.988Z",
       "filePath": "components\\scorer.md"
     },
     "component/search-orchestrator": {
@@ -372,7 +372,7 @@
         "parallel",
         "fusion"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.989Z",
       "filePath": "components\\search-orchestrator.md"
     },
     "component/search-registry": {
@@ -386,7 +386,7 @@
         "discovery",
         "engine"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.989Z",
       "filePath": "components\\search-registry.md"
     },
     "config/storage-constants": {
@@ -400,7 +400,7 @@
         "paths",
         "constants"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.989Z",
       "filePath": "configs\\storage-constants.md"
     },
     "api/memory-categories": {
@@ -413,7 +413,7 @@
         "mcp",
         "categories"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.989Z",
       "filePath": "apis\\memory-categories.md"
     },
     "api/memory-read": {
@@ -427,7 +427,7 @@
         "read",
         "tool"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.989Z",
       "filePath": "apis\\memory-read.md"
     },
     "api/memory-search": {
@@ -441,7 +441,7 @@
         "search",
         "tool"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.989Z",
       "filePath": "apis\\memory-search.md"
     },
     "api/memory-status": {
@@ -455,7 +455,7 @@
         "status",
         "health"
       ],
-      "lastModified": "2026-05-17T14:47:28.602Z",
+      "lastModified": "2026-05-17T15:03:42.989Z",
       "filePath": "apis\\memory-status.md"
     }
   }
