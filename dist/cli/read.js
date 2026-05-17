@@ -1,6 +1,23 @@
-// memory read <id> — full node content + related nodes (layer 2)
+// memory read <id> — body-only content (layer 2), no frontmatter duplication.
+// Frontmatter fields (type, id, summary, tags) are already shown by search.
 import * as fs from 'node:fs';
 import { getMemoryDir, getNodeFilePath } from '../storage/repo-manager.js';
+function stripFrontmatter(content) {
+    const match = content.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/);
+    return match ? match[1].trim() : content;
+}
+function extractSummary(content) {
+    const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (!fmMatch)
+        return '(no summary)';
+    const lines = fmMatch[1].split('\n');
+    for (const line of lines) {
+        if (line.startsWith('summary:')) {
+            return line.replace('summary:', '').trim();
+        }
+    }
+    return '(no summary)';
+}
 export async function readCommand(id, options) {
     const projectRoot = process.cwd();
     const memoryDir = getMemoryDir(projectRoot);
@@ -10,42 +27,19 @@ export async function readCommand(id, options) {
         process.exit(1);
     }
     const content = fs.readFileSync(filePath, 'utf-8');
-    // If summary only, extract frontmatter summary
+    // --summary: one-line summary only
     if (options.summary) {
-        const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
-        if (fmMatch) {
-            const lines = fmMatch[1].split('\n');
-            for (const line of lines) {
-                if (line.startsWith('summary:')) {
-                    console.log(line.replace('summary:', '').trim());
-                    return;
-                }
-            }
-        }
-        console.log('(no summary)');
+        console.log(extractSummary(content));
         return;
     }
+    const body = stripFrontmatter(content);
+    // --format json: body only, no frontmatter duplication
     if (options.format === 'json') {
-        // Parse frontmatter and body
-        const parts = content.split('---\n');
-        const frontmatter = {};
-        if (parts.length >= 2) {
-            const fmLines = parts[1].split('\n');
-            for (const line of fmLines) {
-                const colonIdx = line.indexOf(':');
-                if (colonIdx > 0) {
-                    const key = line.substring(0, colonIdx).trim();
-                    const value = line.substring(colonIdx + 1).trim();
-                    frontmatter[key] = value;
-                }
-            }
-        }
-        const body = parts.slice(2).join('---\n').trim().replace(/^---\n/, '');
-        console.log(JSON.stringify({ id, frontmatter, body }, null, 2));
+        console.log(JSON.stringify({ body }, null, 2));
         return;
     }
-    // Full content output
-    console.log(content);
+    // Default: body only (layer 2 — progressive disclosure)
+    console.log(body);
     // TODO: Show neighbor IDs from graph.json when options.related is true
 }
 //# sourceMappingURL=read.js.map
