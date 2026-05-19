@@ -7,16 +7,17 @@ import { scanDirectory, detectProjectMode, type SourceFile } from '../core/inges
 import { extractSymbols, isTreeSitterAvailable, type ExtractedSymbol } from '../core/ingestion/extractor.js';
 import { writeDump, type AnalyzeDump } from '../core/ingestion/dump-writer.js';
 
-export async function analyzeCommand(targetPath?: string) {
+export async function analyzeCommand(targetPath?: string, options?: { detail?: boolean }) {
   const projectRoot = process.cwd();
   const scanRoot = targetPath ? path.resolve(projectRoot, targetPath) : projectRoot;
+  const detail = options?.detail ?? false;
 
   // Check tree-sitter availability
   const tsAvailable = await isTreeSitterAvailable();
   const engine = tsAvailable ? 'tree-sitter' : 'regex';
 
   console.log(`\nAnalyzing: ${scanRoot}`);
-  console.log(`Engine: ${engine}`);
+  console.log(`Engine: ${engine}${detail ? ' (detail)' : ''}`);
 
   // Phase 1: Initialize .memory/
   const memoryDir = getMemoryDir(projectRoot);
@@ -31,7 +32,7 @@ export async function analyzeCommand(targetPath?: string) {
   const allSymbols: ExtractedSymbol[] = [];
   for (let i = 0; i < sourceFiles.length; i++) {
     const file = sourceFiles[i];
-    const symbols = await extractSymbols(file.absolutePath, file.language);
+    const symbols = await extractSymbols(file.absolutePath, file.language, detail);
     allSymbols.push(...symbols);
 
     if ((i + 1) % 20 === 0) {
@@ -45,6 +46,7 @@ export async function analyzeCommand(targetPath?: string) {
     mode,
     sourceCount: sourceFiles.length,
     symbolCount: allSymbols.length,
+    detail: detail || undefined,
     files: sourceFiles.map(f => ({
       relativePath: f.relativePath,
       language: f.language,
@@ -68,6 +70,12 @@ export async function analyzeCommand(targetPath?: string) {
   console.log(`    Imports: ${imports}`);
   console.log(`    Configs: ${configs}`);
   console.log(`    Routes: ${routes}`);
+  if (detail) {
+    const withParams = allSymbols.filter(s => s.params && s.params.length > 0).length;
+    const withReturn = allSymbols.filter(s => s.returnType).length;
+    console.log(`    Functions with params: ${withParams}`);
+    console.log(`    Functions with return type: ${withReturn}`);
+  }
   console.log(`  Dump: ${dumpPath}`);
   console.log(`\nDone! Run memory-build skill to classify symbols.\n`);
 }

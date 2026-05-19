@@ -23,7 +23,9 @@ export const MEMORY_TOOLS = [
           enum: ['keyword', 'semantic', 'hybrid', 'auto'],
           default: 'auto',
           description: 'Search engine strategy (keyword=FileEngine, hybrid=combine engines, auto=all)'
-        }
+        },
+        methodName: { type: 'string', description: 'Filter by function/method name (depth extraction)' },
+        routePath: { type: 'string', description: 'Filter by route path (depth extraction)' }
       },
       required: ['query']
     },
@@ -36,7 +38,8 @@ export const MEMORY_TOOLS = [
       type: 'object' as const,
       properties: {
         id: { type: 'string', description: 'Node ID, e.g. component/token-service' },
-        related: { type: 'boolean', description: 'Include related node summaries' }
+        related: { type: 'boolean', description: 'Include related node summaries' },
+        section: { type: 'string', enum: ['all', 'methods', 'routes', 'states'], description: 'Read specific section only' }
       },
       required: ['id']
     },

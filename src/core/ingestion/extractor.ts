@@ -3,6 +3,11 @@
 
 import * as fs from 'node:fs';
 
+export interface SymbolParam {
+  name: string;
+  type: string;
+}
+
 export interface ExtractedSymbol {
   name: string;
   type: 'function' | 'class' | 'import' | 'config' | 'route';
@@ -12,6 +17,10 @@ export interface ExtractedSymbol {
   language: string;
   source?: string;
   parent?: string;
+  params?: SymbolParam[];   // depth extraction: function parameters
+  returnType?: string;      // depth extraction: return type annotation
+  handler?: string;         // depth extraction: route handler function name
+  visibility?: string;      // depth extraction: public/protected/private
 }
 
 // ── Tree-sitter state ──
@@ -110,6 +119,117 @@ function extractName(node: any): string | null {
   return null;
 }
 
+// ── Depth extraction: function parameters ──
+
+function extractTypeAnnotation(node: any): string {
+  const typeNode = node.childForFieldName?.('type');
+  if (typeNode) return (typeNode.text || '').trim();
+  if (node.childForFieldName?.('return_type')) {
+    return (node.childForFieldName('return_type').text || '').trim();
+  }
+  for (const child of node.namedChildren || []) {
+    if (child.type === 'type_annotation') {
+      return (child.text || '').trim();
+    }
+  }
+  return '';
+}
+
+function extractAnnotation(node: any): string {
+  const typeNode = node.childForFieldName?.('return_type') || node.childForFieldName?.('type');
+  if (typeNode) return (typeNode.text || '').trim();
+  for (const child of node.namedChildren || []) {
+    if (child.type === 'type_annotation') {
+      return (child.text || '').trim();
+    }
+  }
+  return '';
+}
+
+function extractTypeFromIdentifier(node: any): string {
+  // type_annotation → type → identifier
+  const typeAnnot = node.namedChildren?.find((c: any) => c.type === 'type_annotation');
+  if (typeAnnot) {
+    const typeId = (typeAnnot.text || '').replace(/^:\s*/, '').trim();
+    if (typeId) return typeId;
+  }
+  // field type_annotation child on parameter node
+  const typeNode = node.childForFieldName?.('type') || node.childForFieldName?.('return_type');
+  if (typeNode) return (typeNode.text || '').replace(/^[:\s]+/, '').trim();
+  return '';
+}
+
+function extractParameters(node: any): SymbolParam[] {
+  const params: SymbolParam[] = [];
+  const parametersNode = node.childForFieldName?.('parameters');
+  if (!parametersNode) return params;
+
+  // Look for required_parameter and optional_parameter children
+  function collect(node: any): void {
+    for (const child of node.namedChildren || []) {
+      if (child.type === 'required_parameter' || child.type === 'optional_parameter') {
+        // Find the identifier name
+        const identifier = child.namedChildren?.find((c: any) =>
+          c.type === 'identifier' || c.type === 'property_identifier'
+        );
+        const name = identifier?.text || child.text?.split(':')[0]?.trim() || '';
+        if (!name || name === 'this') continue;
+
+        // Find the type annotation
+        let paramType = '';
+        for (const gc of child.namedChildren || []) {
+          if (gc.type === 'type_annotation') {
+            paramType = (gc.text || '').replace(/^[:\s]+/, '').trim();
+            break;
+          }
+        }
+        // Also try pattern matching for pattern parameters
+        if (!paramType) {
+          for (const gc of child.namedChildren || []) {
+            if (gc.type === 'object_pattern' || gc.type === 'array_pattern') {
+              paramType = gc.type.replace('_pattern', '').trim();
+              break;
+            }
+          }
+        }
+
+        params.push({ name, type: paramType || 'any' });
+      }
+      if (child.namedChildren) collect(child);
+    }
+  }
+  collect(parametersNode);
+  return params;
+}
+
+function extractFunctionReturnType(node: any): string {
+  // Try return_type first (tree-sitter convention)
+  const returnTypeNode = node.childForFieldName?.('return_type');
+  if (returnTypeNode) {
+    return (returnTypeNode.text || '').replace(/^[:\s]+/, '').trim();
+  }
+  // Try type_annotation for arrow functions
+  for (const child of node.namedChildren || []) {
+    if (child.type === 'type_annotation') {
+      return (child.text || '').replace(/^[:\s]+/, '').trim();
+    }
+  }
+  // For function_declaration with return type in body
+  const body = node.childForFieldName?.('return_type') || node.childForFieldName?.('type');
+  if (body) return (body.text || '').replace(/^[:\s]+/, '').trim();
+
+  return '';
+}
+
+function extractVisibility(node: any): string | undefined {
+  for (const child of node.namedChildren || []) {
+    if (child.type === 'accessibility_modifier' || child.type === 'public' || child.type === 'private' || child.type === 'protected') {
+      return child.text || child.type;
+    }
+  }
+  return undefined;
+}
+
 function contentForNode(node: any): string {
   return node.text || '';
 }
@@ -134,6 +254,7 @@ function isExported(node: any, content: string, language: string): boolean {
 
 function walkTree(
   node: any, filePath: string, language: string, content: string,
+  detail = false,
 ): ExtractedSymbol[] {
   const symbols: ExtractedSymbol[] = [];
   const nodeMap = NODE_MAP[language] || NODE_MAP['javascript'];
@@ -163,10 +284,19 @@ function walkTree(
         }
         current = current.parent;
       }
-      symbols.push({
+      const symbol: ExtractedSymbol = {
         name, type: 'function', filePath, line: node.startPosition.row + 1,
         exported: isExported(node, content, language), language, parent,
-      });
+      };
+      // Depth extraction
+      if (detail) {
+        symbol.params = extractParameters(node);
+        symbol.returnType = extractFunctionReturnType(node) || undefined;
+        if (parent) {
+          symbol.visibility = extractVisibility(node);
+        }
+      }
+      symbols.push(symbol);
     }
   }
 
@@ -251,35 +381,102 @@ function walkTree(
     const text = node.text || '';
     const routeMatch = text.match(/@(Get|Post|Put|Delete|Patch|RequestMapping)\s*\(['"]([^'"]*)['"]/i);
     if (routeMatch) {
-      symbols.push({
+      const symbol: ExtractedSymbol = {
         name: `${routeMatch[1].toUpperCase()} ${routeMatch[2]}`,
         type: 'route', filePath, line: node.startPosition.row + 1, language,
-      });
+      };
+      if (detail) {
+        // Find the decorated function/method name
+        let current = node.parent;
+        while (current) {
+          const methodNodes = NODE_MAP[language]?.methodNodes || [];
+          if (methodNodes.includes(current.type)) {
+            symbol.handler = extractName(current) || undefined;
+            break;
+          }
+          current = current.parent;
+        }
+      }
+      symbols.push(symbol);
     }
   }
-  // Express routes: app.get('/path'
+  // Express/Koa router routes
   if (nodeType === 'call_expression') {
     const text = node.text || '';
     const routeMatch = text.match(
-      /(?:app|router|this|server)\.\s*(get|post|put|delete|patch)\s*\(['"]([^'"]+)['"]/i,
+      /(?:app|router|this|server)\.\s*(get|post|put|delete|patch|all|use)\s*\(['"]([^'"]+)['"]/i,
     );
     if (routeMatch) {
-      symbols.push({
+      const symbol: ExtractedSymbol = {
         name: `${routeMatch[1].toUpperCase()} ${routeMatch[2]}`,
         type: 'route', filePath, line: node.startPosition.row + 1, language,
-      });
+      };
+      if (detail) {
+        // Extract handler: next argument after the path string
+        const pathIdx = text.indexOf(`'${routeMatch[2]}'`) + routeMatch[2].length + 2;
+        const afterPath = text.substring(pathIdx);
+        const handlerMatch = afterPath.match(/^\s*,\s*(\w+)/);
+        if (handlerMatch) {
+          symbol.handler = handlerMatch[1];
+        }
+      }
+      symbols.push(symbol);
+    }
+  }
+
+  // State enum / string literal union (detail mode)
+  if (detail && nodeType === 'type_alias_declaration') {
+    const name = extractName(node);
+    const text = node.text || '';
+    // TypeScript string literal union: type Status = 'a' | 'b' | 'c'
+    const unionMatch = text.match(/type\s+\w+\s*=\s*(.+)/);
+    if (unionMatch && (text.includes("'") || text.includes('"'))) {
+      // Check if all values are string literals
+      const values = (unionMatch[1] || '').split('|').map((s: string) => s.trim().replace(/^['"]|['"]$/g, ''));
+      if (values.length >= 2 && values.every((v: string) => v && /^[a-zA-Z_]/.test(v))) {
+        symbols.push({
+          name: name || '', type: 'config', filePath,
+          line: node.startPosition.row + 1, language,
+          source: `StateUnion:${values.join(',')}`,
+        });
+      }
+    }
+  }
+
+  // Enum declarations for state machines (detail mode)
+  if (detail && nodeType === 'enum_declaration') {
+    const name = extractName(node);
+    if (name && (/status|state|mode/i.test(name) || name.endsWith('Status') || name.endsWith('State'))) {
+      const values: string[] = [];
+      for (const child of node.namedChildren || []) {
+        if (child.type === 'enum_member' || child.type === 'enum_body') {
+          for (const member of child.namedChildren || []) {
+            if (member.type === 'enum_member' || member.type === 'property_identifier') {
+              const memberName = member.text || '';
+              if (memberName) values.push(memberName);
+            }
+          }
+        }
+      }
+      if (values.length >= 2) {
+        symbols.push({
+          name, type: 'config', filePath,
+          line: node.startPosition.row + 1, language,
+          source: `StateEnum:${values.join(',')}`,
+        });
+      }
     }
   }
 
   // Recurse
   for (const child of node.namedChildren || []) {
-    symbols.push(...walkTree(child, filePath, language, content));
+    symbols.push(...walkTree(child, filePath, language, content, detail));
   }
   return symbols;
 }
 
 function extractWithTreeSitter(
-  content: string, filePath: string, language: string,
+  content: string, filePath: string, language: string, detail = false,
 ): ExtractedSymbol[] {
   try {
     const lang = tsLanguages[language];
@@ -288,7 +485,7 @@ function extractWithTreeSitter(
     const parser = new tsParser();
     parser.setLanguage(lang);
     const tree = parser.parse(content);
-    return walkTree(tree.rootNode, filePath, language, content);
+    return walkTree(tree.rootNode, filePath, language, content, detail);
   } catch {
     return [];
   }
@@ -389,14 +586,14 @@ function extractWithRegex(
 // ── Public API ──
 
 export async function extractSymbols(
-  filePath: string, language: string,
+  filePath: string, language: string, detail = false,
 ): Promise<ExtractedSymbol[]> {
   let content: string;
   try { content = fs.readFileSync(filePath, 'utf-8'); } catch { return []; }
 
   const hasTreeSitter = await tryLoadTreeSitter();
   if (hasTreeSitter) {
-    const result = extractWithTreeSitter(content, filePath, language);
+    const result = extractWithTreeSitter(content, filePath, language, detail);
     if (result.length > 0) return result;
     // Fallback to regex if tree-sitter returned empty (unsupported syntax)
   }

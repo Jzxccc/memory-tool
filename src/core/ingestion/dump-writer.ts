@@ -9,6 +9,7 @@ export interface AnalyzeDump {
   mode: 'monolith' | 'micro';
   sourceCount: number;
   symbolCount: number;
+  detail?: boolean;
   files: Array<{
     relativePath: string;
     language: string;

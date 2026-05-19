@@ -16,6 +16,8 @@ export interface SearchOptions {
   tag?: string;
   top: number;
   strategy?: SearchStrategy; // Engine selection strategy
+  methodName?: string; // Filter by method name (depth extraction)
+  routePath?: string; // Filter by route path (depth extraction)
 }
 
 export interface SearchResult {
@@ -25,6 +27,9 @@ export interface SearchResult {
   tags: string[];
   score: number; // Normalized 0-10
   source: 'file' | 'libsql';
+  methodCount?: number; // Number of methods in this entry
+  methodNames?: string[]; // Method names (for enhanced summary)
+  routeCount?: number; // Number of routes in this entry
 }
 
 export interface SearchEngine {

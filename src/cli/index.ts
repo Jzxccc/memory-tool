@@ -27,10 +27,12 @@ Common workflow:
 program
   .command('analyze [path]')
   .description('Extract symbols from source code using tree-sitter')
+  .option('--detail', 'Enable depth extraction (params, return types, state machines)')
   .addHelpText('after', `
 Examples:
   $ memory analyze                  Analyze entire current project
   $ memory analyze src/core/        Analyze specific directory
+  $ memory analyze --detail         Deep analysis with function signatures
 
 Uses tree-sitter when available, falls back to regex.
 Output written to .memory/.analyze-dump.json
@@ -46,6 +48,8 @@ program
   .option('--top <n>', 'Limit results', '10')
   .option('--format <fmt>', 'Output format (json)', 'text')
   .option('-s, --strategy <strategy>', 'Search strategy (keyword|semantic|hybrid|auto)', 'auto')
+  .option('--method <name>', 'Filter by method/function name')
+  .option('--route <path>', 'Filter by route path')
   .addHelpText('after', `
 Examples:
   $ memory search "cli"                           Basic keyword search
@@ -55,6 +59,8 @@ Examples:
   $ memory search "graph" -t search               Filter by tag
   $ memory search "cli" -s auto                   Auto strategy (all engines)
   $ memory search "cli" -s keyword                Keyword-only engines
+  $ memory search "handle" --method wechatLogin    Search by function name
+  $ memory search "" --route "/payment/notify"     Search by route path
 
 Node types: system, flow, component, config, api, decision
 `)

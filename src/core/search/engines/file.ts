@@ -12,6 +12,8 @@ const WEIGHTS = {
   SUMMARY_MATCH: 3,
   TAG_MATCH: 1,
   BODY_OCCURRENCE: 0.5,
+  METHOD_MATCH: 4,
+  ROUTE_MATCH: 4,
 } as const;
 
 function extractFrontmatter(content: string): { frontmatter: string; body: string } | null {
@@ -33,7 +35,27 @@ function parseFrontmatter(fm: string): Record<string, unknown> {
     }
     result[key] = value;
   }
+
+  // Post-process: extract method names from nested YAML
+  const methodNames = extractMethodNamesFromYaml(fm);
+  if (methodNames.length > 0) {
+    result.methods = methodNames.map(name => ({ name }));
+  }
+
   return result;
+}
+
+// Extract method names from YAML frontmatter with nested structure
+function extractMethodNamesFromYaml(fm: string): string[] {
+  const names: string[] = [];
+  const lines = fm.split('\n');
+  for (const line of lines) {
+    const match = line.match(/^\s+-\s+name:\s*(\S+)/);
+    if (match) {
+      names.push(match[1]);
+    }
+  }
+  return names;
 }
 
 function matchTerm(text: string, term: string): number {
@@ -58,8 +80,35 @@ function scoreFile(
   const summary = (fm.summary as string) || '';
   const tags = Array.isArray(fm.tags) ? fm.tags as string[] : [];
 
+  // Extract methods from frontmatter (depth extraction)
+  const methods = Array.isArray(fm.methods) ? fm.methods as Array<Record<string, unknown>> : [];
+  const methodNames: string[] = methods
+    .map((m: Record<string, unknown>) => (m.name as string) || '')
+    .filter((n: string) => n.length > 0);
+
+  // Count routes in body
+  const routeMatches = parsed.body.match(/\| \w+ \| (\/[\w/-]*)/g);
+  const routeCount = routeMatches ? routeMatches.length : 0;
+
   if (options.category && type !== options.category) return null;
   if (options.tag && !tags.includes(options.tag)) return null;
+
+  // Method name filter
+  if (options.methodName) {
+    const found = methodNames.some((n: string) =>
+      n.toLowerCase().includes(options.methodName!.toLowerCase())
+    );
+    if (!found && !parsed.body.toLowerCase().includes(options.methodName.toLowerCase())) {
+      return null;
+    }
+  }
+
+  // Route path filter
+  if (options.routePath) {
+    if (!parsed.body.includes(options.routePath)) {
+      return null;
+    }
+  }
 
   const operator = query.operator;
   let totalScore = 0;
@@ -77,6 +126,20 @@ function scoreFile(
         termScore += WEIGHTS.TAG_MATCH;
       }
     }
+    // Method name matching
+    for (const mName of methodNames) {
+      if (mName.toLowerCase().includes(term.toLowerCase())) {
+        termScore += WEIGHTS.METHOD_MATCH;
+      }
+    }
+    // Route path matching
+    if (routeMatches) {
+      for (const rm of routeMatches) {
+        if (rm.toLowerCase().includes(term.toLowerCase())) {
+          termScore += WEIGHTS.ROUTE_MATCH;
+        }
+      }
+    }
     termScore += matchTerm(parsed.body, term) * WEIGHTS.BODY_OCCURRENCE;
 
     if (termScore === 0) {
@@ -91,13 +154,26 @@ function scoreFile(
 
   if (!allMatched || totalScore === 0) return null;
 
+  // Enhanced summary
+  let enhancedSummary = summary || '(no summary)';
+  if (methodNames.length > 0) {
+    const preview = methodNames.slice(0, 3).join(', ');
+    enhancedSummary += ` [${methodNames.length} methods: ${preview}${methodNames.length > 3 ? '...' : ''}]`;
+  }
+  if (routeCount > 0) {
+    enhancedSummary += ` [${routeCount} routes]`;
+  }
+
   return {
     id,
     type,
-    summary: summary || '(no summary)',
+    summary: enhancedSummary,
     tags,
     score: totalScore,
     source: 'file',
+    methodCount: methodNames.length,
+    methodNames,
+    routeCount,
   };
 }
 

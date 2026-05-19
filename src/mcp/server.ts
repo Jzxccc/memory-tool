@@ -37,6 +37,8 @@ export async function startMCPServer(projectRoot: string) {
             tag: args.tag as string | undefined,
             top: (args.top as number) || 10,
             strategy: args.strategy as string | undefined,
+            methodName: args.methodName as string | undefined,
+            routePath: args.routePath as string | undefined,
           });
           return {
             content: [{ type: 'text', text: JSON.stringify(results, null, 2) }]

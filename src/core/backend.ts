@@ -48,13 +48,15 @@ export class LocalBackend {
 
   async search(
     query: string,
-    options?: { category?: string; tag?: string; top?: number; strategy?: string },
+    options?: { category?: string; tag?: string; top?: number; strategy?: string; methodName?: string; routePath?: string },
   ): Promise<SearchResult[]> {
     return this.orchestrator.search(query, {
       category: options?.category,
       tag: options?.tag,
       top: options?.top || 10,
       strategy: (options?.strategy as any) || 'auto',
+      methodName: options?.methodName,
+      routePath: options?.routePath,
     });
   }
 

@@ -10,6 +10,8 @@ export async function searchCommand(queryArg: string, options: {
   top?: string;
   format?: string;
   strategy?: string;
+  method?: string;
+  route?: string;
 }) {
   const projectRoot = process.cwd();
   const memoryDir = getMemoryDir(projectRoot);
@@ -23,6 +25,8 @@ export async function searchCommand(queryArg: string, options: {
     tag: options.tag,
     top: parseInt(options.top || '10', 10),
     strategy: (options.strategy as any) || 'auto',
+    methodName: options.method,
+    routePath: options.route,
   });
 
   if (results.length === 0) {
@@ -44,7 +48,9 @@ export async function searchCommand(queryArg: string, options: {
   console.log(`Search results${engineInfo}:`);
   console.log('');
   for (const r of results) {
-    console.log(`  ${r.score.toFixed(1)}  ${r.type.padEnd(10)}  ${r.id.padEnd(30)}  ${r.tags.join(', ')}`);
+    const methodInfo = r.methodCount ? ` ${r.methodCount} methods` : '';
+    const routeInfo = r.routeCount ? ` ${r.routeCount} routes` : '';
+    console.log(`  ${r.score.toFixed(1)}  ${r.type.padEnd(10)}  ${r.id.padEnd(30)}  ${r.tags.join(', ')}${methodInfo}${routeInfo}`);
     console.log(`       ${r.summary}`);
     console.log('');
   }
