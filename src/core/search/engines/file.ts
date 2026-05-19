@@ -90,7 +90,7 @@ function scoreFile(
   const routeMatches = parsed.body.match(/\| \w+ \| (\/[\w/-]*)/g);
   const routeCount = routeMatches ? routeMatches.length : 0;
 
-  if (options.category && type !== options.category) return null;
+  if (options.category && type.toLowerCase() !== options.category.toLowerCase()) return null;
   if (options.tag && !tags.includes(options.tag)) return null;
 
   // Method name filter
@@ -113,6 +113,12 @@ function scoreFile(
   const operator = query.operator;
   let totalScore = 0;
   let allMatched = true;
+
+  // When methodName or routePath filter is active with empty query, give base score
+  const hasFilterOnly = (options.methodName || options.routePath) && query.terms.length === 0;
+  if (hasFilterOnly) {
+    totalScore = 1; // base score for filtered matches without query terms
+  }
 
   for (const term of query.terms) {
     let termScore = 0;
