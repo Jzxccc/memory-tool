@@ -2,8 +2,9 @@
   "mcpServers": {
     "memory-tool": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "memory-tool@latest", "mcp"]
+      "command": "memory",
+      "args": ["mcp"]
     }
-  }
+  },
+  "disabledMcpServers": []
 }

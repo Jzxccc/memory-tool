@@ -1,6 +1,8 @@
 {
-  "enabledMcpjsonServers": [],
-  "disabledMcpjsonServers": [
+  "enabledMcpjsonServers": [
     "memory-tool"
+  ],
+  "disabledMcpjsonServers": [
+    
   ]
 }

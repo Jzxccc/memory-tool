@@ -136,13 +136,14 @@ Verifies: file existence, content hash match, referenced source file existence.
 `)
   .action(createLazyAction(() => import('./audit.js'), 'auditCommand'));
 
-// memory mcp
+// memory mcp [project-path]
 program
-  .command('mcp')
+  .command('mcp [project-path]')
   .description('Start MCP stdio server for AI tool integration')
   .addHelpText('after', `
 Examples:
-  $ memory mcp                                    Start MCP server on stdio
+  $ memory mcp                                    Start MCP server on current project
+  $ memory mcp /path/to/project                   Start MCP server for specific project
 
 Provides 5 tools: memory_search, memory_read, memory_graph, memory_status, memory_categories
 Provides 3 resources: memory://categories, memory://status, memory://tags
